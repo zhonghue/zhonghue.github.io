@@ -9,10 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://zhonghuo.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Pitt Law">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -53,16 +53,2951 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zhonghuo.github.io"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-数理逻辑-谓词逻辑及形式系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E5%8F%8A%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time datetime="2020-08-13T14:28:53.852Z" itemprop="datePublished">2020-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、-谓词公式"><a href="#一、-谓词公式" class="headerlink" title="一、 谓词公式"></a>一、 谓词公式</h2><h3 id="1-个体、谓词-amp-量词"><a href="#1-个体、谓词-amp-量词" class="headerlink" title="1. 个体、谓词 &amp; 量词"></a>1. 个体、谓词 &amp; 量词</h3><p>在谈谓词逻辑之前，我们先来看看<strong>命题逻辑</strong>有什么<strong>限制</strong></p>
+<h4 id="1）命题的解析"><a href="#1）命题的解析" class="headerlink" title="1）命题的解析"></a>1）命题的解析</h4><ul>
+<li><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>命题是对确定的<strong>对象</strong>作出<strong>判断</strong>的陈述句。</li>
+</ul>
+</li>
+<li><h5 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h5><ul>
+<li>研究单位<ul>
+<li>命题逻辑中最小研究单位是<strong>原子命题</strong>，并没有进一步研究<strong>内部结构</strong></li>
+</ul>
+</li>
+<li>研究对象<ul>
+<li>对<strong>不确定</strong>的对象应当如何？（X&gt;5）</li>
+</ul>
+</li>
+<li>判断<ul>
+<li>进行<strong>不同条件</strong>下的判断如何？</li>
+</ul>
+</li>
+<li>命题逻辑<ul>
+<li>命题之间相互<strong>独立</strong>，没有内在联系</li>
+<li>在经典的三段论推理中，命题逻辑有些力不从心</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）命题之间的内在联系"><a href="#2）命题之间的内在联系" class="headerlink" title="2）命题之间的内在联系"></a>2）命题之间的内在联系</h4><ul>
+<li><h5 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h5><ul>
+<li><p>三段论</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">大前提：</span><br><span class="line">    p：所有的学校都有学生。</span><br><span class="line">小前提：</span><br><span class="line">    q：北京大学是学校。</span><br><span class="line">结论：</span><br><span class="line">    r:北京大学有学生。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对以上命题逻辑的形式化结果：</p>
+<div align='center'>
+  (p∧q)→r
+</div></li>
+</ul>
+</li>
+<li><h5 id="研究该例"><a href="#研究该例" class="headerlink" title="研究该例"></a>研究该例</h5><ul>
+<li>我们发现：一个<strong>正确的推理</strong>在命题逻辑中并<strong>不是永真式</strong></li>
+<li>因为：该命题逻辑，并未将p/q/r看做有联系的事情，但这三个命题实际上包含了一些<strong>有关联</strong>的概念，并<strong>非相互独立</strong>（学校、学生）</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）命题的结构分析"><a href="#3）命题的结构分析" class="headerlink" title="3）命题的结构分析"></a>3）命题的结构分析</h4><ul>
+<li><h5 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>命题是对确定的<strong>对象</strong>作出<strong>判断</strong>的陈述句。</li>
+</ul>
+</li>
+<li><h5 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h5><ul>
+<li>被判断对象：<strong>个体</strong></li>
+<li>做出的判断：<strong>谓词</strong></li>
+<li>个体的数量：<strong>量词</strong>（所有、有些、没有）</li>
+</ul>
+</li>
+</ul>
+<h4 id="4）谓词逻辑定义"><a href="#4）谓词逻辑定义" class="headerlink" title="4）谓词逻辑定义"></a>4）谓词逻辑定义</h4><ul>
+<li>谓词逻辑将<strong>量词</strong>作用于<strong>个体</strong>，引入个体变元，讨论不确定的对象（所有人、部分人、没有人）</li>
+<li>谓词逻辑也称为【一阶逻辑】（First Order Logic）</li>
+<li>如果将量词作用于谓词，引入谓词变元，属于二阶逻辑研究范围，不在本课内容范围之内</li>
+</ul>
+<h4 id="5）个体"><a href="#5）个体" class="headerlink" title="5）个体"></a>5）个体</h4><ul>
+<li><h5 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>谓词逻辑将一切被讨论的对象都称作个体（individual）</li>
+</ul>
+</li>
+<li><h5 id="特殊的个体"><a href="#特殊的个体" class="headerlink" title="特殊的个体"></a>特殊的个体</h5><ul>
+<li><strong>确定的个体</strong>常用A,b,c表示，称作个体常元（constants）</li>
+<li><strong>不确定的个体</strong>常用x,y,z,u,v,w表示，称作个体变元（variables）</li>
+</ul>
+</li>
+<li><h5 id="个体域-amp-全总域"><a href="#个体域-amp-全总域" class="headerlink" title="个体域 &amp; 全总域"></a>个体域 &amp; 全总域</h5><ul>
+<li>被讨论对象的<strong>全体</strong>称作<strong>个体域</strong>（domain of individuals)，记作D</li>
+<li>包含<strong>一切</strong>对象的个体域称为<strong>全总域</strong>（universe），记作U</li>
+</ul>
+</li>
+</ul>
+<h4 id="6）谓词"><a href="#6）谓词" class="headerlink" title="6）谓词"></a>6）谓词</h4><ul>
+<li><h5 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>表示个体性质或关系的语言成分，通常是谓语，称作谓词(predicate)</li>
+</ul>
+</li>
+<li><h5 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h5><ul>
+<li><code>北京大学是学校。</code>中的<code>___是学校</code></li>
+<li><code>张三和李四是朋友。</code>中的<code>___和___是朋友</code></li>
+</ul>
+</li>
+<li><h5 id="元数"><a href="#元数" class="headerlink" title="元数"></a>元数</h5><ul>
+<li><p>谓词中可以放置个体的空位个数称为谓词的元数</p>
+</li>
+<li><p>分类</p>
+<ul>
+<li><p>单元谓词</p>
+<div align='center'>
+  ___是学校
+</div>
+</li>
+<li><p>二元谓词</p>
+<div align='center'>
+  ___和___是朋友
+</div>
+</li>
+<li><p>三元谓词</p>
+<div align='center'>
+  ___和___是___
+</div>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>因为我们不能总用空白来表示，所以把空位用变元的字母来代替，称作【谓词命名式】</p>
+<h4 id="7）谓词命名式"><a href="#7）谓词命名式" class="headerlink" title="7）谓词命名式"></a>7）谓词命名式</h4><ul>
+<li><h5 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>将谓词中的<strong>个体空位</strong>用变元字母代替，称作<strong>谓词命名式</strong></li>
+</ul>
+</li>
+<li><h5 id="形式"><a href="#形式" class="headerlink" title="形式"></a>形式</h5><ul>
+<li>常用大写字母P/Q/R等代表谓词</li>
+<li>如<kbd>P(x)</kbd>， <kbd> Q(x, y)</kbd></li>
+<li>命名式的<strong>变元字母</strong>并没有独立的含义，仅是<strong>占位符</strong>（place holder）</li>
+</ul>
+</li>
+<li><h5 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h5><ul>
+<li><code>___是学校</code>， 可记作：<kbd>SCHL(x)</kbd></li>
+<li><code>___和___是朋友</code>， 可记作：<kbd>FRD(x，y，r)</kbd></li>
+<li><code> ___和___是___</code>，可记作：<kbd>REL(x, y, r)</kbd></li>
+</ul>
+</li>
+</ul>
+<h4 id="8）谓词填式"><a href="#8）谓词填式" class="headerlink" title="8）谓词填式"></a>8）谓词填式</h4><ul>
+<li><h5 id="定义-5"><a href="#定义-5" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>将谓词中的个体空位用<strong>具体的</strong>个体变元或常元代替，称为【谓词填式】</li>
+<li>当谓词填式中的<strong>个体都是常元</strong>时，它是一个<strong>命题</strong>，具有确定的真值。</li>
+</ul>
+</li>
+<li><h5 id="与命名式区别"><a href="#与命名式区别" class="headerlink" title="与命名式区别"></a>与命名式区别</h5><ul>
+<li>类似于<strong>形参 &amp; 实参</strong></li>
+</ul>
+</li>
+<li><h5 id="举例-3"><a href="#举例-3" class="headerlink" title="举例"></a>举例</h5><ul>
+<li>SCHL（北京大学）<ul>
+<li>表示<code>北京大学是学校。</code></li>
+</ul>
+</li>
+<li>FRD（张三，李四）<ul>
+<li>表示<code>张三和李四是朋友。</code></li>
+</ul>
+</li>
+<li>R（x）<ul>
+<li>表示<code>x是实数</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="9）量词"><a href="#9）量词" class="headerlink" title="9）量词"></a>9）量词</h4><ul>
+<li><h5 id="定义-6"><a href="#定义-6" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>指数量词【所有】&amp;【有】<ul>
+<li><strong>所有</strong><ul>
+<li>全称量词（universal quantifier）</li>
+<li>记作：<kbd>∀</kbd> (Any / All)</li>
+</ul>
+</li>
+<li><strong>有</strong><ul>
+<li>存在量词（existential quantifier）</li>
+<li>记作：<kbd>∃</kbd>（exist）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="指导、约束-amp-自由变元"><a href="#指导、约束-amp-自由变元" class="headerlink" title="指导、约束&amp;自由变元"></a>指导、约束&amp;自由变元</h5><ul>
+<li><p>指导变元</p>
+<ul>
+<li><p><strong>量词作用于谓词</strong>时，不能直接写在谓词前面，需要引入一个<strong>指导变元</strong>，同时放在量词后面和谓词填[式中</p>
+<div align='center'><span color='red'>∀xP(x)</span>  任意x，P(x)<br/>∃xP(x)   存在x，P(x)
+</li>
+</ul>
+</li>
+<li><p>约束变元</p>
+<ul>
+<li><p>指导变元是<strong>不可取值代入</strong>的，称作<strong>约束变元</strong>（bound variables）</p>
+</li>
+<li><p>约束变元可以改名而不改变语句含义</p>
+<div align='center'>∀xP(x) ⟺ ∀yP(y)
+</li>
+</ul>
+</li>
+<li><p>自由变元</p>
+<ul>
+<li><strong>可以取值代入</strong>的个体变元称为<strong>自由变元</strong>（free variables）</li>
+<li>自由变元并未被量词所约束</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="辖域"><a href="#辖域" class="headerlink" title="辖域"></a>辖域</h5><ul>
+<li><h5 id="定义-7"><a href="#定义-7" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>量词所作用的<strong>谓词</strong>or<strong>复合谓词表达式</strong>，称作量词的辖域（domain of quantifiers）</li>
+</ul>
+</li>
+<li><h5 id="等价展开"><a href="#等价展开" class="headerlink" title="等价展开"></a>等价展开</h5><ul>
+<li><p>对于一元谓词，∀xP(x) &amp; ∃xP(x)都是命题，对于<strong>有穷的个体域</strong>{A<del>1</del>, A<del>2</del>, A<del>3</del>, ….. A<del>n</del>}</p>
+<div align='center'>∀xP(x) ⟺ P(A1)∧P(A2)∧...∧P(an)<br/>
+  ∃xP(x) ⟺ P(A1)∨P(A2)∨...∨P(an)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="举例-4"><a href="#举例-4" class="headerlink" title="举例"></a>举例</h5><ul>
+<li><p><code>个体域是所有人，∃xFRD(x, 张三) </code></p>
+<ul>
+<li>在所有人中，存在个体常元x，x和张三是朋友</li>
+</ul>
+</li>
+<li><p><code>个体域是&#123;1,2&#125;，∀x(x&gt;0) </code></p>
+<ul>
+<li>在{1,2}中，任意个体常元x，x&gt;0</li>
+<li>等价于：（1&gt;0)∧(2&gt;0)</li>
+</ul>
+</li>
+<li><p><code>个体域是所有正整数，哥德巴赫猜想</code></p>
+<ul>
+<li>∀x∃p∃q[Even(x)∧(x&gt;2)→(x=p+q)∧Prime(p)∧Prime(q)]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-谓词公式"><a href="#2-谓词公式" class="headerlink" title="2. 谓词公式"></a>2. 谓词公式</h3><h4 id="1）谓词公式定义"><a href="#1）谓词公式定义" class="headerlink" title="1）谓词公式定义"></a>1）谓词公式定义</h4><p>与命题公式定义相同，采用三句式的归纳定义。</p>
+<ul>
+<li><h5 id="定义-8"><a href="#定义-8" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>谓词填式为公式，命题常元（零元谓词）是公式，称作原子公式==<strong>（前提）</strong>==</li>
+<li>如果A,B是公式，x为任一变元，那么<code>(﹁A)</code>,  <code>(A→B)</code>, <code>(∀xA)</code>, <code> ∃xA</code>都是公式==<strong>（推理）</strong>==</li>
+<li>只有<strong>有限</strong>次使用上述两个条款形成的符号串是公式 <strong>==(有限步骤)==</strong></li>
+</ul>
+</li>
+<li><h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><ul>
+<li>连接词结合<strong>优先级</strong>和括号省略约定同前。</li>
+<li>注意<code>(∀xA)</code>, <code> (∃xA)</code>中，公式A可以不包含变元x，此时<code>(∀xA)</code>, <code> (∃xA)</code>均等价于A。==没看懂==</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）谓词公式成为命题"><a href="#2）谓词公式成为命题" class="headerlink" title="2）谓词公式成为命题"></a>2）谓词公式成为命题</h4><ul>
+<li><h5 id="基本表述"><a href="#基本表述" class="headerlink" title="基本表述"></a>基本表述</h5><ul>
+<li>如果给定<strong>个体域</strong>，公式中的所有谓词都有<strong>明确意义</strong>，公式中的所有自由变元<strong>取定个体</strong>，谓词公式就成为一个命题</li>
+</ul>
+</li>
+<li><h5 id="举例-5"><a href="#举例-5" class="headerlink" title="举例"></a>举例</h5><p>  设个体域为实数域，E(x,y) ⟺ x=y，L(x,y) ⟺x&lt;y则</p>
+<ul>
+<li><p>∀xL（0，x^2^+1)  ⟺ 0&lt;x^2^+1, x∈R</p>
+<ul>
+<li>结果为真</li>
+</ul>
+</li>
+<li><p>∃xE（x^2^+x+1，0) ⟺ x^2^+x+1 = 0，x∈R</p>
+<ul>
+<li><p>不具备实数解，结果为假</p>
+</li>
+<li><p>为简洁起见，谓词公式可改写成：</p>
+<div align='center'>∃x（x2+x+1=0)
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）语句形式化"><a href="#3）语句形式化" class="headerlink" title="3）语句形式化"></a>3）语句形式化</h4><p>在以下讨论里，我们都假设个体域是全人类</p>
+<ul>
+<li><p>有人勇敢，但不是所有人都勇敢。</p>
+  <div align='center'>∃xBrave(x)∧﹁∀xBrave
+</li>
+<li><p>勇敢者未必是成功者。</p>
+  <div align='center'>﹁∀x[Brave(x)→Success(x)]<br/>
+      ∃x[Brave(x)∧﹁Success(x)]
+</li>
+<li><p>君子坦荡荡，小人常戚戚。</p>
+  <div align='center'>∀x[P(x)→Q(x)]∧∀x[R(x)→S(x)]
+</li>
+<li><p>张三没朋友。</p>
+  <div align='center'>∀x[﹁FRD(x, 张三)<br/>
+      ﹁∃xFRD(x, 张三)
+
+</li>
+</ul>
+<h3 id="3-谓词公式永真式"><a href="#3-谓词公式永真式" class="headerlink" title="3. 谓词公式永真式"></a>3. 谓词公式永真式</h3><h4 id="1）谓词成为命题，具有确定真值的条件"><a href="#1）谓词成为命题，具有确定真值的条件" class="headerlink" title="1）谓词成为命题，具有确定真值的条件"></a>1）谓词成为命题，具有确定真值的条件</h4><ul>
+<li><h5 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h5><ul>
+<li>给定<strong>个体域</strong></li>
+<li>对公式当中的<strong>所有谓词都有明确意义</strong></li>
+<li>公式中的<strong>所有自由变元取定个体</strong></li>
+</ul>
+</li>
+<li><h5 id="永真式-amp-谓词公式的关系"><a href="#永真式-amp-谓词公式的关系" class="headerlink" title="永真式 &amp; 谓词公式的关系"></a>永真式 &amp; 谓词公式的关系</h5><ul>
+<li>永真式是逻辑中重要的概念</li>
+<li>谓词公式有<strong>4个层次</strong>的 “永真”<ul>
+<li>光确定真值的条件就有3个</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）谓词公式成真的4个层次：永真式"><a href="#2）谓词公式成真的4个层次：永真式" class="headerlink" title="2）谓词公式成真的4个层次：永真式"></a>2）谓词公式成真的4个层次：永真式</h4><p>给定个体域，公式A（x<del>1</del>, x<del>2</del>, x<del>3</del> … x<del>n</del>）中各谓词符号的解释I</p>
+<ul>
+<li><h5 id="第一层"><a href="#第一层" class="headerlink" title="第一层"></a>第一层</h5><ul>
+<li>如果A中的自由变元x<del>1</del>, x<del>2</del>, x<del>3</del> … x<del>n</del>，分别取值u<del>1</del>, u<del>2</del>,u<del>3</del> … u<del>n</del>时为真</li>
+<li>称作：A在u<del>1</del>, u<del>2</del>,u<del>3</del> … u<del>n</del></li>
+</ul>
+</li>
+<li><h5 id="第二层"><a href="#第二层" class="headerlink" title="第二层"></a>第二层</h5><ul>
+<li>如果A在自由变元的任何取值下都真</li>
+<li>称作：A在解释I下为真</li>
+</ul>
+</li>
+<li><h5 id="第三层"><a href="#第三层" class="headerlink" title="第三层"></a>第三层</h5><ul>
+<li><p>如果A在每个解释I下均真</p>
+</li>
+<li><p>称作：A在D中永真</p>
+<img src="C:\Users\Pitt\Documents\Tencent Files\3047917554\FileRecv\MobileFile\fullsizerender.jpg" alt="fullsizerender" style="zoom: 25%;" />
+</li>
+</ul>
+</li>
+<li><h5 id="第四层"><a href="#第四层" class="headerlink" title="第四层"></a>第四层</h5><ul>
+<li>如果A在任何个体域D永真</li>
+<li>称作：A无条件永真</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）谓词公式可满足式-amp-永假式"><a href="#3）谓词公式可满足式-amp-永假式" class="headerlink" title="3）谓词公式可满足式 &amp; 永假式"></a>3）谓词公式可满足式 &amp; 永假式</h4><p>相对于永真式而言，我们继续讨论可满足式 &amp; 永假式</p>
+<ul>
+<li><h5 id="永真式"><a href="#永真式" class="headerlink" title="永真式"></a>永真式</h5><ul>
+<li>如果对于<strong>某个个体域</strong>，谓词的<strong>某个解释</strong>，和自由变元的<strong>某个取值</strong>而言，</li>
+<li>公式A在此处取值为真，则称A是<strong>可满足式</strong>。</li>
+</ul>
+</li>
+<li><h5 id="永假式"><a href="#永假式" class="headerlink" title="永假式"></a>永假式</h5><ul>
+<li>在上述条件下，</li>
+<li>公式A所有取值均不为真，则称A是<strong>永假式</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4）谓词公式的逻辑等价-amp-逻辑蕴涵定义"><a href="#4）谓词公式的逻辑等价-amp-逻辑蕴涵定义" class="headerlink" title="4）谓词公式的逻辑等价 &amp; 逻辑蕴涵定义"></a>4）谓词公式的逻辑等价 &amp; 逻辑蕴涵定义</h4><ul>
+<li><h5 id="逻辑等价"><a href="#逻辑等价" class="headerlink" title="逻辑等价"></a>逻辑等价</h5><ul>
+<li>对一切域、解释和变元取值情况，a和b都具有相同的真值</li>
+<li>记作 A⟺B</li>
+</ul>
+</li>
+<li><h5 id="逻辑蕴涵"><a href="#逻辑蕴涵" class="headerlink" title="逻辑蕴涵"></a>逻辑蕴涵</h5><ul>
+<li>对一切域、解释和变元取值情况，A真B就真。</li>
+<li>记作 A⇒B</li>
+</ul>
+</li>
+</ul>
+<h4 id="5）重要的谓词演算永真式"><a href="#5）重要的谓词演算永真式" class="headerlink" title="5）重要的谓词演算永真式"></a>5）重要的谓词演算永真式</h4><ul>
+<li><h5 id="所有命题逻辑中的重言式"><a href="#所有命题逻辑中的重言式" class="headerlink" title="所有命题逻辑中的重言式"></a>所有命题逻辑中的重言式</h5></li>
+<li><h5 id="有量无谓-（此时量词无法作用在谓词上，所以只是摆设）"><a href="#有量无谓-（此时量词无法作用在谓词上，所以只是摆设）" class="headerlink" title="有量无谓 ==（此时量词无法作用在谓词上，所以只是摆设）=="></a><strong>有量无谓</strong> ==（此时量词无法作用在谓词上，所以只是摆设）==</h5><ul>
+<li><p>当a不含变元x的时候的<strong>等值</strong></p>
+<div align='center'>∀xA ⟺ A，∃xA ⟺ A
+</li>
+</ul>
+</li>
+<li><h5 id="有量有谓"><a href="#有量有谓" class="headerlink" title="有量有谓"></a>有量有谓</h5><ul>
+<li>当有变元x的时候的<strong>蕴涵</strong> (所有量词 &gt; 自由变元 &gt; 存在量词)</li>
+</ul>
+</li>
+</ul>
+<div align='center'>∀xA(x) ⇒ A(x)<br/>A(x) ⇒ ∃xA(x)<br/> ∀xA(x) ⇒ ∃xA(x)
+
+<ul>
+<li><h5 id="量词变换"><a href="#量词变换" class="headerlink" title="量词变换"></a>量词变换</h5><ul>
+<li><p>不存在x，使得A为假 ⟺ 所有x，均使得A为真</p>
+  <div align='center'>﹁∃x﹁A(x) ⟺ ∀xA(x)
+</li>
+<li><p>不是所有的x，均使得A为假 ⟺ 存在x，使得A为真</p>
+  <div align='center'>﹁∀x﹁A(x) ⟺ ∃xA(x)
+</li>
+<li><p>不存在x，使得A为真 ⟺ 所有x，均使得A为假</p>
+  <div align='center'>﹁∃xA(x) ⟺ ∀x﹁A(x)
+</li>
+<li><p>不是所有的x，均使得A为真 ⟺ 存在x，使得A为假</p>
+  <div align='center'>﹁∀xA(x) ⟺ ∃x﹁A(x)
+
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>∀</th>
+<th>∃</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>∀xA(x)</td>
+<td>∃xA(x)</td>
+</tr>
+<tr>
+<td>﹁</td>
+<td>∀x﹁A(x)</td>
+<td>∃x﹁A(x)</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h5 id="出现公式B的有量无谓"><a href="#出现公式B的有量无谓" class="headerlink" title="出现公式B的有量无谓"></a>出现公式B的有量无谓</h5><ul>
+<li><p>当B不含变元x的时候的<strong>等值</strong> ==（B可以自由进出两个量词的辖域）==</p>
+<div align='center'>∀xA(x)∨B ⟺ ∀x[A(x)∨B]<br/>
+  ∀xA(x)∧B ⟺ ∀x[A(x)∧B] <br/>
+  ∃xA(x)∨B ⟺ ∃x[A(x)∨B]<br/>
+  ∃xA(x)∧B ⟺ ∃x[A(x)∧B]<br/>
+
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>∀</th>
+<th>∃</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>∧</td>
+<td>∀x[A(x)<strong>∧</strong>B]</td>
+<td>∃x[A(x)∧B]</td>
+</tr>
+<tr>
+<td>∨</td>
+<td>∀x[A(x)∨B]</td>
+<td>∃x[A(x)∨B]</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h5 id="出现公式B的有量有谓"><a href="#出现公式B的有量有谓" class="headerlink" title="出现公式B的有量有谓"></a>出现公式B的有量有谓</h5><ul>
+<li><p>当B含有自由变元x时</p>
+<ul>
+<li><p>对于所有x，可以满足A<strong>和</strong>B同时为真 ⟺对于所有x，使得A为真，并且对于所有x，使得B为真</p>
+  <div align='center'>∀x[A(x)∧B] ⟺ ∀xA(x)∧∀xB(x)
+
+<img src="C:\Users\Pitt\Documents\Tencent Files\3047917554\FileRecv\MobileFile\fullsizerender(5).jpg" alt="fullsizerender(5)"  />
+
+<div align='center'>注释：由左式只能画出这么一个图，而右式也只能画出这一个图，故而等价
+</li>
+<li><p>对于所有x，可以满足a真<strong>或</strong>b真 ⇒ 对于所有x，使得A∨B为真</p>
+  <div align='center'>∀xA(x)∨∀xB(x) ⇒ ∀x[A(x)∨B(x)]
+
+<img src="C:\Users\Pitt\Documents\Tencent Files\3047917554\FileRecv\MobileFile\fullsizerender(6).jpg" alt="fullsizerender(6)" style="zoom:;" />
+
+<div align='center'>注释：由右式可以画出来这个图，使得左式不满足，所以只有单项蕴涵
+</li>
+<li><p>存在x，可以满足A<strong>和</strong>B同时为真 ⇒ 存在x，使得A为真；或者存在x，使得B为真</p>
+<div align='center'>∃x[A(x)∧B(x)] ⇒ ∃xA(x)∧∃xB(x)
+<img src="C:\Users\Pitt\Documents\Tencent Files\3047917554\FileRecv\MobileFile\fullsizerender(4).jpg" alt="fullsizerender(4)"  />
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div align='center'>注释：由右式可以画出来这个图，使得左式不满足，所以只有单项蕴涵
+
+<ul>
+<li>存在x，可以满足A真或B真 ⟺ 存在x，可以满足A真；或者存在x，可以满足B真</li>
+</ul>
+<div align='center'>∃x[A(x)∨B(x)] ⟺ ∃xA(x)∨∃xB(x)
+        <img src="C:\Users\Pitt\Documents\Tencent Files\3047917554\FileRecv\MobileFile\fullsizerender(7).jpg" alt="fullsizerender(7)"  />
+
+<div align='center'>注释：A和B集合同时为空集，两式才为假。
+
+<p>​                        </p>
+<ul>
+<li><h5 id="两个量词各自修饰二元谓词"><a href="#两个量词各自修饰二元谓词" class="headerlink" title="两个量词各自修饰二元谓词"></a>两个量词各自修饰二元谓词</h5><ul>
+<li><p>量词的组合 &amp; 顺序</p>
+<ul>
+<li><p>对于所有x，每一个x和所有的y都可使A为真 ⟺ 对于所有y，每一个y和所有的x都可使A为真</p>
+  <div align='center'>∀x∀yA(x, y) ⟺ ∀y∀xA(x, y)<br/>
+      注释：对称律
+</li>
+<li><p>对于所有x，每一个x和所有的y都可使A为真 ⇒ 存在一些y，这些y的每一个和所有的x都可是A为真</p>
+  <div align='center'>∀x∀yA(x, y) ⇒ ∃y∀xA(x, y)
+
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">左式：</span><br><span class="line">    每一个x都有关系：x不空</span><br><span class="line">    每一个y都有关系：y不空</span><br><span class="line">右式：</span><br><span class="line">    每一个x都有关系：x不空</span><br><span class="line">右式范围更大。</span><br><span class="line">所以：</span><br><span class="line">    左式为真可⇒右式为真</span><br><span class="line">    当右式为【x不空，y空】时，不能⇒左式为真。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>存在一些y，这些y和所有的x都可使得A为真 ⇒ 对于所有x，每个x都存在y，使得A为真</p>
+  <div align='center'>∃y∀xA(x, y) ⇒ ∀x∃yA(x, y)
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">左式：</span><br><span class="line">    每一个x都有关系：x不空</span><br><span class="line">    关系种类少</span><br><span class="line">右式：</span><br><span class="line">    每一个x都有关系：x不空</span><br><span class="line">    关系种类多</span><br><span class="line">右式范围更大。</span><br><span class="line">所以：</span><br><span class="line">    左式为真可⇒右式为真</span><br><span class="line">    反之不行。</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于所有x，每一个x都存在y，使得A为真 ⇒存在y，这些y的每一个都存在x，使得A为真</p>
+  <div align='center'>∀x∃yA(x, y) ⇒ ∃x∃yA(x, y)
+
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">左式：</span><br><span class="line">    每一个x都有关系：x不空</span><br><span class="line">右式：</span><br><span class="line">    无关系</span><br><span class="line">右式范围更大。</span><br><span class="line">所以：</span><br><span class="line">    左式为真⇒右式为真</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>存在x，这些x的每一个都存在y，使得A为真 ⟺ 存在y，这些y的每一个都存在x，使得A为真</p>
+<div align='center'>∃y∃xA(x, y) ⟺ ∃x∃yA(x, y)<br/>
+  注释：对称律
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>    &lt;img src=&quot;C:\Users\Pitt\Documents\Tencent Files\3047917554\FileRecv\MobileFile\fullsizerender(8).jpg&quot; alt=&quot;fullsizerender(8)&quot;  /&gt;</code></pre>
+<ul>
+<li><h5 id="关于蕴涵"><a href="#关于蕴涵" class="headerlink" title="关于蕴涵"></a>关于蕴涵</h5><ul>
+<li><p>当C中无自由变元x时，有：</p>
+  <div align='center'>∀x（C→A(x)）⟺ C→∀xA(x)
+
+  <div align='center'>∃x（C→A(x)）⟺ C→∃xA(x)
+
+  <div align='center'>∀x（A(x)→B(x)）⇒ ∀xA(x)→∀xB(x)
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、-谓词演算形式系统"><a href="#二、-谓词演算形式系统" class="headerlink" title="二、 谓词演算形式系统"></a>二、 谓词演算形式系统</h2><h3 id="1-谓词演算形式系统FC"><a href="#1-谓词演算形式系统FC" class="headerlink" title="1. 谓词演算形式系统FC"></a>1. 谓词演算形式系统FC</h3><h4 id="1）一阶谓词演算形式系统"><a href="#1）一阶谓词演算形式系统" class="headerlink" title="1）一阶谓词演算形式系统"></a>1）一阶谓词演算形式系统</h4><ul>
+<li><p>FC的符号系统</p>
+<ul>
+<li><p>个体变元</p>
+<ul>
+<li>u, v, w, x, y, z…</li>
+</ul>
+</li>
+<li><p>个体常元</p>
+<ul>
+<li>a, b, c, d, e…</li>
+</ul>
+</li>
+<li><p>个体间运算符号(将千变万化的运算使用<strong>函数符</strong>来表示)</p>
+<ul>
+<li>f^(n)^，g^(n)^，h^(n)^</li>
+<li>n为正整数（n&gt;0) ，表示函数的元数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>谓词符号</p>
+<pre><code>  * P^(n)^, Q^(n)^, R^(n)^, S^(n)^
+      * 其中，n是非负整数，表示谓词的元数
+  * 当`n=0`时，谓词公式退化为命题常元，==它没有任何空位需要填==</code></pre>
+</li>
+<li><p>真值联结词</p>
+<ul>
+<li>﹁，→ ==（之所以使用尽量少的联结词集，是为了减少公理的数目）==</li>
+</ul>
+</li>
+<li><p>量词</p>
+<pre><code>  * ∀
+  * 存在量词可以用全称量词表示：
+
+  &lt;div align=&#39;center&#39;&gt;（∃x ⟺ ﹁∀x﹁)</code></pre>
+</li>
+</ul>
+<h4 id="2）FC的高级语言成分"><a href="#2）FC的高级语言成分" class="headerlink" title="2）FC的高级语言成分"></a>2）FC的高级语言成分</h4><ul>
+<li><h5 id="个体项，简称项（term）"><a href="#个体项，简称项（term）" class="headerlink" title="个体项，简称项（term）"></a>个体项，简称<strong>项</strong>（term）</h5><ul>
+<li>个体变元 &amp;个体常元是项</li>
+<li>对任意正整数n，如果f^(n)^为一【n元函数符】，t<del>1</del>, …,t<del>n</del>为项，则**f^(n)^（t<del>1</del>, …,t<del>n</del>)**也是项</li>
+<li>除有限次使用上述两个条款确定的符号串外，没有别的东西是项</li>
+<li>==（项，是运算后得到的个体对象）==</li>
+</ul>
+</li>
+</ul>
+<p>项之间的运算是可以嵌套的，可以用不同的函数符进行嵌套，最终得到一个个体项。</p>
+<ul>
+<li><h5 id="合式公式（Well-formed-formula），简称公式"><a href="#合式公式（Well-formed-formula），简称公式" class="headerlink" title="合式公式（Well-formed formula），简称公式"></a>合式公式（Well-formed formula），简称公式</h5><ul>
+<li>对任意非负整数n，如果P^(n)^是一【n元谓词符】，t<del>1</del>, …,t<del>n</del>为项，则：<ul>
+<li><strong>P^(n)^（t<del>1</del>, …,t<del>n</del>)</strong>(n&gt;0)是公式<ul>
+<li>举例：P^(1)^：___是狗。</li>
+<li>举例：P^(2)^：__ 是 ___。</li>
+</ul>
+</li>
+<li><strong>P^(0)^</strong>是命题常元，也是公式<ul>
+<li>举例：P^(0)^：旺财是狗。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果A、B是公式，v为任意一个个体变元，那么（﹁A），（A→B），（∀vA(v)），（∀vA(v)）</li>
+<li>除有限次使用上述两个条款确定的符号串外，没有别的东西是公式</li>
+<li>==（合式公式才相当于FC中的命题公式）==</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）全称封闭式"><a href="#3）全称封闭式" class="headerlink" title="3）全称封闭式"></a>3）全称封闭式</h4><ul>
+<li><h5 id="定义-9"><a href="#定义-9" class="headerlink" title="定义"></a>定义</h5><ul>
+<li><p>设v<del>1</del>，v<del>2</del>，v<del>3</del>，…，v<del>n</del>是公式A中的自由变元，那么公式称为<strong>全称封闭式</strong></p>
+<div align='center'>∀v1, ∀v2, ∀v3, …∀vn A(v1，v2，v3，…，vn)
+</li>
+<li><p>当A中不含有自由变元时，A的全称封闭式就是其自身</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>在全程封闭式介绍后，可以继续介绍FC的公理</p>
+<h4 id="4）FC的公理"><a href="#4）FC的公理" class="headerlink" title="4）FC的公理"></a>4）FC的公理</h4><table>
+<thead>
+<tr>
+<th>公式序数</th>
+<th>公理</th>
+<th>自取名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>A→(B→A)</td>
+<td>ABA式</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>(A→(B→C)) → [(A→B)→(A→C)]</td>
+<td>分配式</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>(﹁A→﹁B) → (B→A)</td>
+<td>逆否式</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>∀xA(x)→A(t/x) (x为任意一个自由变元)</td>
+<td>代换律</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>∀x[A(x)→B(x)] → [∀xA(x) → ∀xB(x)]</td>
+<td>全称分配式</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>A → ∀xA(x)</td>
+<td>约束式</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>A1~A6的全称封闭式都是FC公理</td>
+<td>封闭式</td>
+</tr>
+</tbody></table>
+<ul>
+<li>A1~A3是命题逻辑的重言式，也是谓词演算的永真式</li>
+<li>A4~A7是谓词演算的永真式</li>
+</ul>
+<h4 id="5）FC的推理规则-amp-重要性质"><a href="#5）FC的推理规则-amp-重要性质" class="headerlink" title="5）FC的推理规则 &amp; 重要性质"></a>5）FC的推理规则 &amp; 重要性质</h4><ul>
+<li><h5 id="分离规则（同PC）"><a href="#分离规则（同PC）" class="headerlink" title="分离规则（同PC）"></a>分离规则（同PC）</h5><ul>
+<li>A, A→B / B</li>
+</ul>
+</li>
+<li><h5 id="重要性质"><a href="#重要性质" class="headerlink" title="重要性质"></a>重要性质</h5><ul>
+<li>合理性<ul>
+<li>FC中的定理，都是逻辑真理</li>
+</ul>
+</li>
+<li>一致性<ul>
+<li>FC中不会同时证明、演绎出自相矛盾的两个定理</li>
+</ul>
+</li>
+<li>完备性<ul>
+<li>只要是逻辑真理，就能被FC推出</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-全称引入规则-amp-存在消除规则"><a href="#2-全称引入规则-amp-存在消除规则" class="headerlink" title="2. 全称引入规则 &amp; 存在消除规则"></a>2. 全称引入规则 &amp; 存在消除规则</h3><p>这两个定理与PC中的元定理地位、作用相同，用于证明FC中的一些定理</p>
+<ul>
+<li><h5 id="全称引入规则（Universal-Generalization）"><a href="#全称引入规则（Universal-Generalization）" class="headerlink" title="全称引入规则（Universal Generalization）"></a>全称引入规则（Universal Generalization）</h5><ul>
+<li><p>定义</p>
+<ul>
+<li><p>对于任意公式A，变元v，如果A是定理，那么<strong>所有vA</strong>也是定理</p>
+  <div align='center'>ㅏA ⇒ ㅏ∀vA
+</li>
+</ul>
+</li>
+<li><p>证明（数学归纳法）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">∵A是定理</span><br><span class="line">∴必然存在一个证明序列</span><br><span class="line">∴对A的证明序列的长度进行归纳</span><br><span class="line">当 l&#x3D;1时，A为公理&#123;</span><br><span class="line">    若A中有自由变元v&#123;</span><br><span class="line">        ∀vA是A全称封闭式[A6]</span><br><span class="line">        ∀vA是公理[A7]</span><br><span class="line">        &#125;</span><br><span class="line">    若A中没有自由变元&#123;</span><br><span class="line">        A和A → ∀xA(x)[A6]</span><br><span class="line">        分离规则：ㅏ∀vA</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">设 l&lt;k时，全称引入规则成立，A的证明序列是A1, A2, ..., Ak(&#x3D;A)&#123;</span><br><span class="line">    若Ak是公理，则证明同上；</span><br><span class="line">    若Ak不是公理，则一定有Ai和Aj(&#x3D;Ai→Ak)(i，j&lt;k)一定用分离规则得出&#123;</span><br><span class="line">        前提：ㅏ∀vAi, ㅏ∀v(Ai→Ak)</span><br><span class="line">        公理[A5]：∀v(Ai→Ak) → [∀vAi → ∀vAk] </span><br><span class="line">        使用两次分离规则：</span><br><span class="line">            ⇒ㅏ∀vAk(l&#x3D;1)</span><br><span class="line">            ⟺ㅏ∀vA</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>* 推广到演绎结果
+
+    * 对任何公式集Γ，公式A &amp; 不在Γ中任何公式自由出现的变元v
+
+        &lt;div align=&#39;center&#39;&gt;ΓㅏA ⇒ Γㅏ∀vA
+
+* 意义
+
+    * 如果我们能用一组与变元v无关的前提演绎出A(v)
+        * 表明我们已经对任意的v导出了&lt;kbd&gt;Av&lt;/kbd&gt;，也就是&lt;kbd&gt;∀vA(v)&lt;/kbd&gt;==没懂==
+    * 如果前提中公式B(v)包含了自由变元v
+        * 那么导出的Av是以B(v)为前提的，即v不是任意的，所以不会有∀vA(v)成立</code></pre>
+<ul>
+<li><h5 id="存在消除规则（Existential-Instantiation"><a href="#存在消除规则（Existential-Instantiation" class="headerlink" title="存在消除规则（Existential Instantiation)"></a>存在消除规则（Existential Instantiation)</h5><ul>
+<li><p>定义</p>
+<ul>
+<li><p>设A，B为任意公式，变元x是公式A，但不是公式B的自由变元</p>
+  <div align='center'>ㅏ∃xA(x)，A(x)ㅏB ⇒ ㅏB
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>* 意义
+
+  * 如果A(x)能够推出B成立，而B中并不包含变元x，说明B的成立与x的具体取值无关，只需要有x能使A(x)为真，B即为真
+
+* 举例
+
+    * “ 不妨设 ……”句式，即为存在消除规则</code></pre>
+<h2 id="三、-自然推理系统"><a href="#三、-自然推理系统" class="headerlink" title="三、 自然推理系统"></a>三、 自然推理系统</h2><h3 id="1-自然推理系统"><a href="#1-自然推理系统" class="headerlink" title="1. 自然推理系统"></a>1. 自然推理系统</h3><h4 id="1）PC-amp-FC的不足之处"><a href="#1）PC-amp-FC的不足之处" class="headerlink" title="1）PC &amp; FC的不足之处"></a>1）PC &amp; FC的不足之处</h4><ul>
+<li>PC &amp; FC一样，证明和演绎过程都过于繁复</li>
+<li>繁复性是因追求简洁性而产生的</li>
+<li>为了追求简洁，只用了两个连接词，一个量词和一条推理规则</li>
+<li>如果能够引入更多的连接词，量词、推理规则，那么证明/演绎过程就会显得更加自然</li>
+</ul>
+<h4 id="2）人们经常在推理过程中使用假设"><a href="#2）人们经常在推理过程中使用假设" class="headerlink" title="2）人们经常在推理过程中使用假设"></a>2）人们经常在推理过程中使用假设</h4><p>在形式系统中引入<strong>带假设</strong>的<strong>推理规则</strong>，能够使推理过程更加接近<strong>人的思维</strong>，更加高效和便捷</p>
+<ul>
+<li><h5 id="演绎"><a href="#演绎" class="headerlink" title="演绎"></a>演绎</h5><ul>
+<li>为证明<kbd>A→B</kbd></li>
+<li>假设A成立，证明B成立，则完成了A→B的证明</li>
+</ul>
+</li>
+<li><h5 id="归谬-反证"><a href="#归谬-反证" class="headerlink" title="归谬/反证"></a>归谬/反证</h5><ul>
+<li>为证明<kbd>A</kbd></li>
+<li>假设﹁A成立，导出矛盾，则A成立</li>
+</ul>
+</li>
+<li><h5 id="穷举"><a href="#穷举" class="headerlink" title="穷举"></a>穷举</h5><ul>
+<li>已知<kbd>A∨B</kbd>,为证明<kbd>C</kbd></li>
+<li>假设A证明C，B证明C，均能成功，则完成证明</li>
+</ul>
+</li>
+<li><h5 id="不妨设"><a href="#不妨设" class="headerlink" title="不妨设"></a>不妨设</h5><ul>
+<li>已知<kbd>∃xA(x)</kbd>,为证明<kbd>与x无关的C</kbd></li>
+<li>假设A(x0)能证明C，则完成C的证明</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）自然推理系统ND（Natural-Deduction）"><a href="#3）自然推理系统ND（Natural-Deduction）" class="headerlink" title="3）自然推理系统ND（Natural Deduction）"></a>3）自然推理系统ND（Natural Deduction）</h4><ul>
+<li>ND概述<ul>
+<li>采用5个联结词，2个量词</li>
+<li>少数公理、更多的规则、引入假设</li>
+<li>用推理规则体现人的推理习惯</li>
+</ul>
+</li>
+<li>符号系统<ul>
+<li>5个联结词，2个量词</li>
+</ul>
+</li>
+<li>公理<ul>
+<li>公式集合Γ</li>
+<li>(Γ，A)ㅏA</li>
+</ul>
+</li>
+<li>推理规则</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><kbd>假设</kbd></th>
+<th><kbd>∨</kbd></th>
+<th><kbd>∧</kbd></th>
+<th><kbd>→</kbd></th>
+<th><kbd>﹁</kbd></th>
+<th><kbd>﹁﹁</kbd></th>
+<th><kbd>↔</kbd></th>
+<th><kbd>∀</kbd></th>
+<th><kbd>∃</kbd></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>引入规则</td>
+<td>1</td>
+<td>3</td>
+<td>6</td>
+<td>8</td>
+<td>10</td>
+<td>13</td>
+<td>15</td>
+<td>17</td>
+<td>20</td>
+</tr>
+<tr>
+<td>引入规则（2）</td>
+<td></td>
+<td>4</td>
+<td></td>
+<td></td>
+<td>11</td>
+<td></td>
+<td></td>
+<td>18</td>
+<td></td>
+</tr>
+<tr>
+<td>消除规则</td>
+<td>2</td>
+<td>5</td>
+<td>7</td>
+<td>9</td>
+<td>12</td>
+<td>14</td>
+<td>16</td>
+<td>19</td>
+<td>21</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>前提</th>
+<th>推论</th>
+<th>源于重言式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>ΓㅏB</td>
+<td>(Γ; A)ㅏB</td>
+<td>B→(A→B)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>(Γ; A)ㅏB, (Γ; ﹁A)ㅏB</td>
+<td>ΓㅏB</td>
+<td>﹁A→(A→B)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ΓㅏA</td>
+<td>ΓㅏA∨B</td>
+<td>A→(A∨B)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>(Γ; ﹁B)ㅏA</td>
+<td>ΓㅏA∨B</td>
+<td>(﹁B→A)↔(A∨B)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ΓㅏA∨B, (Γ; A)ㅏC, (Γ; B)ㅏC,</td>
+<td>ΓㅏC</td>
+<td>(A∨B)∧(A→C)∧(B→C)→C</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ΓㅏA, ΓㅏB</td>
+<td>ΓㅏA∧B</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>ΓㅏA∧B</td>
+<td>ΓㅏA</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>(Γ; A)ㅏB</td>
+<td>ΓㅏA→B</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>ΓㅏA→B, ΓㅏA</td>
+<td>ΓㅏB</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>(Γ; A)ㅏB, (Γ; A)ㅏ﹁B</td>
+<td>Γㅏ﹁A</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>(Γ; A)ㅏf</td>
+<td>Γㅏ﹁A</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>ΓㅏA, Γㅏ﹁A</td>
+<td>ΓㅏB</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>ΓㅏA</td>
+<td>Γㅏ﹁﹁A</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Γㅏ﹁﹁A</td>
+<td>ΓㅏA</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>ΓㅏA→B, ΓㅏB→A</td>
+<td>ΓㅏA↔B</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>ΓㅏA↔B</td>
+<td>ΓㅏA→B, ΓㅏB→A</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>ΓㅏA</td>
+<td>Γㅏ∀vA</td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Γㅏ∀vA</td>
+<td>Γㅏ∀vA(v)</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Γㅏ∀vA(v)</td>
+<td>ΓㅏA(t/v)</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>ΓㅏA(t)</td>
+<td>Γㅏ∃vA(v/t)</td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Γㅏ∃vA(v), Γ;A(e/v)ㅏC</td>
+<td>ΓㅏC</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="2-ND中的定理证明"><a href="#2-ND中的定理证明" class="headerlink" title="2. ND中的定理证明"></a>2. ND中的定理证明</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhonghuo.github.io/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E5%8F%8A%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F/" data-id="ckdswfxvb000460vmaitad6qb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数理逻辑-命题逻辑及形式系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%E5%8F%8A%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time datetime="2020-08-13T14:28:53.845Z" itemprop="datePublished">2020-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、重言式"><a href="#一、重言式" class="headerlink" title="一、重言式"></a>一、重言式</h2><h3 id="1-重言式"><a href="#1-重言式" class="headerlink" title="1. 重言式"></a>1. 重言式</h3><h4 id="1）命题公式的分类"><a href="#1）命题公式的分类" class="headerlink" title="1）命题公式的分类"></a>1）命题公式的分类</h4><ul>
+<li><h5 id="命题公式之间的关系有两种"><a href="#命题公式之间的关系有两种" class="headerlink" title="命题公式之间的关系有两种"></a>命题公式之间的关系有两种</h5><ul>
+<li>等价</li>
+<li>蕴涵</li>
+</ul>
+</li>
+<li><h5 id="命题公式可以从真值的角度进行分类"><a href="#命题公式可以从真值的角度进行分类" class="headerlink" title="命题公式可以从真值的角度进行分类"></a>命题公式可以从<strong>真值</strong>的角度进行分类</h5><ul>
+<li><p>x (A) = 0, x取任意赋值——&gt; A称【重言式】/ 【永真式】(Tautology)</p>
+</li>
+<li><p>y (A) = 0, y取任意赋值——&gt; A称【矛盾式】/ 【永假式】（contradiction）</p>
+</li>
+<li><p>z (A) = 0, 使得A<strong>至少有一个</strong>成真赋值——&gt;A 称 【可满足式】（contingency)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）概念区分"><a href="#2）概念区分" class="headerlink" title="2）概念区分"></a>2）概念区分</h4><ul>
+<li>永真式<strong>都是</strong>可满足式</li>
+<li>矛盾式<strong>都不是</strong>可满足式</li>
+<li>非永真式<strong>并不都是</strong>永假式</li>
+<li>如果具体到一个公式A，若A是永真式，则 ﹁A是永假式，反之亦然</li>
+</ul>
+<h4 id="3）重言式举例-amp-证明"><a href="#3）重言式举例-amp-证明" class="headerlink" title="3）重言式举例 &amp; 证明"></a>3）重言式举例 &amp; 证明</h4><ul>
+<li><h5 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h5><ul>
+<li>A v ﹁A 是重言式（排中律）</li>
+<li>A ^ ﹁A 是矛盾式（矛盾式）</li>
+</ul>
+</li>
+<li><h5 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h5><ul>
+<li><p>可使用<strong>真值表</strong>证明重言式</p>
+</li>
+<li><p>举例：证明==(p v q) ^ ﹁p→q==</p>
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>p v q</th>
+<th>﹁p</th>
+<th>(p v q) ^ ﹁p</th>
+<th>(p v q) ^ ﹁p→q</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-逻辑等价式-amp-逻辑蕴涵式"><a href="#2-逻辑等价式-amp-逻辑蕴涵式" class="headerlink" title="2. 逻辑等价式 &amp; 逻辑蕴涵式"></a>2. 逻辑等价式 &amp; 逻辑蕴涵式</h3><h4 id="1）逻辑等价式"><a href="#1）逻辑等价式" class="headerlink" title="1）逻辑等价式"></a>1）逻辑等价式</h4><ul>
+<li><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>A ↔ B 是重言式，则称 A逻辑等价于B，记作A ≡ B，称为逻辑等价式</li>
+</ul>
+</li>
+<li><h5 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h5><ul>
+<li>逻辑体现为两公式之间，在任何赋值状况下他们都等值</li>
+</ul>
+</li>
+<li><h5 id="内容（16）"><a href="#内容（16）" class="headerlink" title="内容（16）"></a>内容（16）</h5><table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>算式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>双重否定律(双重否定表肯定)</td>
+<td>¬¬A⟺A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>等幂律(一件事情说两遍)</td>
+<td>A∧A⟺A，A∨A⟺A</td>
+</tr>
+<tr>
+<td>3</td>
+<td>交换律</td>
+<td>A∨B⟺B∨A</td>
+</tr>
+<tr>
+<td>4</td>
+<td>结合律</td>
+<td>(A∨B)∨C⟺A∨(B∨C)，(A∧B)∧C⟺A∧(B∧C)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>分配律</td>
+<td>A∨(B∧C)⟺(A∨B)∧(A∨C)，A∧(B∨C)⟺(A∧B)∨(A∧C)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>德摩根律(去括号要变号)</td>
+<td>¬(A∨B)⟺¬A∧¬B，¬(A∧B)⟺¬A∨¬B</td>
+</tr>
+<tr>
+<td>7</td>
+<td>吸收律</td>
+<td>A∨(A∧B)⟺A，<em>A</em>∧(<em>A</em>∨<em>B</em>)⟺A</td>
+</tr>
+<tr>
+<td>8</td>
+<td>零律</td>
+<td>A∨1⟺1，A∧0⟺0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>同一律</td>
+<td>A∨0⟺A，A∧1⟺A</td>
+</tr>
+<tr>
+<td>10</td>
+<td>排中律</td>
+<td>A∨¬A⟺1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>矛盾律</td>
+<td>A∧¬A⟺0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>蕴含等值式</td>
+<td>A→B⟺¬A∨B</td>
+</tr>
+<tr>
+<td>13</td>
+<td>等价等值式</td>
+<td>A↔B⟺(A→B)∧(B→A)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>假言易位(逆否命题)</td>
+<td>A→B⟺¬B→¬A</td>
+</tr>
+<tr>
+<td>15</td>
+<td>等价否定等值式</td>
+<td>A↔B⟺¬A↔¬B</td>
+</tr>
+<tr>
+<td>16</td>
+<td>归谬论(前提A错误)</td>
+<td>(A→B)∧(A→¬B)⟺¬A</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/CommanderZero/article/details/104214354">重要等值式的证明</a></p>
+</li>
+</ul>
+<h4 id="2）逻辑蕴涵式"><a href="#2）逻辑蕴涵式" class="headerlink" title="2）逻辑蕴涵式"></a>2）逻辑蕴涵式</h4><ul>
+<li><h5 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>A → B 是重言式，则称 A逻辑蕴涵于B，记作A ⇒ B，称为逻辑蕴涵式</li>
+</ul>
+</li>
+<li><h5 id="含义-1"><a href="#含义-1" class="headerlink" title="含义"></a>含义</h5><ul>
+<li>逻辑体现为只要A真，B就真（A包含于B）</li>
+<li>每个逻辑等价式可看做两个逻辑蕴涵式（A⟺B == A⇒B &amp; B ⇒ A)</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+<ul>
+<li><h5 id="内容（8）"><a href="#内容（8）" class="headerlink" title="内容（8）"></a>内容（8）</h5><table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>算式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>附加式</td>
+<td>P⇒P∨Q</td>
+</tr>
+<tr>
+<td>2</td>
+<td>化简式</td>
+<td>P∧Q⇒P</td>
+</tr>
+<tr>
+<td>3</td>
+<td>假言推论</td>
+<td>P∧(P→Q)⇒Q</td>
+</tr>
+<tr>
+<td>4</td>
+<td>拒取式</td>
+<td>(P→Q)∧¬Q⇒¬P</td>
+</tr>
+<tr>
+<td>5</td>
+<td>析取三段论</td>
+<td>¬P∧(P∨Q)⇒Q</td>
+</tr>
+<tr>
+<td>6</td>
+<td>假言三段论</td>
+<td>(P→Q)∧(Q→R)⇒P→R</td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>(P→Q)∧(R→S)⇒(P∧R)→(Q∧S)</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td>(P↔Q)∧(Q↔R)⇒P↔R</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h4 id="3）逻辑结构"><a href="#3）逻辑结构" class="headerlink" title="3）逻辑结构"></a>3）逻辑结构</h4><ul>
+<li>逻辑蕴涵经常被推广为 ：<code>Γ ⇒ B</code><ul>
+<li>Γ 为一系列公式，表示B是Γ的逻辑结果</li>
+<li>使得Γ中的每一个公式成真的赋值，都是公式B成真赋值</li>
+<li>即Γ中的==所有公式的合取==逻辑蕴B</li>
+<li>当Γ中仅包含1个公式A，就是A ⇒ B </li>
+<li>当Γ为空，就是 ⇒B，表示B永真</li>
+</ul>
+</li>
+</ul>
+<h4 id="4）逻辑等价式-amp-逻辑蕴含式的重要性质"><a href="#4）逻辑等价式-amp-逻辑蕴含式的重要性质" class="headerlink" title="4）逻辑等价式 &amp; 逻辑蕴含式的重要性质"></a>4）逻辑等价式 &amp; 逻辑蕴含式的重要性质</h4><ul>
+<li><p><strong>自反</strong></p>
+</li>
+<li><p><strong>对称</strong></p>
+</li>
+<li><p><strong>传递</strong></p>
+</li>
+</ul>
+<h3 id="3-代入-amp-替换原理"><a href="#3-代入-amp-替换原理" class="headerlink" title="3. 代入 &amp; 替换原理"></a>3. 代入 &amp; 替换原理</h3><h4 id="1）重言式的代入原理"><a href="#1）重言式的代入原理" class="headerlink" title="1）重言式的代入原理"></a>1）重言式的代入原理</h4><ul>
+<li><h5 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>将重言式A中的某个命题变元p的<strong>所有出现都代换</strong>为命题公式B，记作<strong>A(B/p)</strong></li>
+</ul>
+</li>
+<li><h5 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h5><ul>
+<li>A(B/p)也是重言式</li>
+<li>因为重言式A的真值，与p的取值状况无关，恒为1</li>
+</ul>
+</li>
+<li><h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><ul>
+<li>代换仅<strong>部分出现</strong>，本原理不成立</li>
+<li>如果B中包含了p或者A中的其他变元，本原理不成立</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）命题公式的替换原理"><a href="#2）命题公式的替换原理" class="headerlink" title="2）命题公式的替换原理"></a>2）命题公式的替换原理</h4><ul>
+<li><p><strong>定义</strong></p>
+<ul>
+<li>将命题公式A中的某个子公式C的<strong>部分出现替换</strong>与<strong>C逻辑等价</strong>的公式D，得到命题公式B</li>
+</ul>
+</li>
+<li><h5 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h5><ul>
+<li>A ⟺ B</li>
+<li>因为C ⟺ D，所以替换后不会改变A的真值</li>
+</ul>
+</li>
+<li><h5 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h5><ul>
+<li>不要求全部出现都替换</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）代入-amp-替换原理的区别"><a href="#3）代入-amp-替换原理的区别" class="headerlink" title="3）代入 &amp; 替换原理的区别"></a>3）代入 &amp; 替换原理的区别</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>代入原理</th>
+<th>替换原理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>适用对象</td>
+<td>任意重言式</td>
+<td>任意命题公式</td>
+</tr>
+<tr>
+<td>代换对象</td>
+<td>任意命题变元</td>
+<td>任意子公式</td>
+</tr>
+<tr>
+<td>代换物</td>
+<td>任意命题公式</td>
+<td>逻辑等价的命题公式</td>
+</tr>
+<tr>
+<td>代入方式</td>
+<td>代换同一命题变元的所有出现</td>
+<td>代换子公式的某些出现</td>
+</tr>
+<tr>
+<td>代换结果</td>
+<td>仍为永真式</td>
+<td>与原公式等价</td>
+</tr>
+</tbody></table>
+<h3 id="4-证明逻辑等价式-amp-逻辑蕴涵式"><a href="#4-证明逻辑等价式-amp-逻辑蕴涵式" class="headerlink" title="4.证明逻辑等价式 &amp; 逻辑蕴涵式"></a>4.证明逻辑等价式 &amp; 逻辑蕴涵式</h3><h4 id="1）证明逻辑等价式-amp-逻辑蕴涵式"><a href="#1）证明逻辑等价式-amp-逻辑蕴涵式" class="headerlink" title="1）证明逻辑等价式 &amp; 逻辑蕴涵式"></a>1）证明逻辑等价式 &amp; 逻辑蕴涵式</h4><ul>
+<li><h5 id="真值表法"><a href="#真值表法" class="headerlink" title="真值表法"></a><strong>真值表法</strong></h5><ul>
+<li>要证明 A⟺B：只需列出A↔B的真值表，最后一列全真即可</li>
+<li>要证明 A⇒B：只需列出A→B的真值表，最后一列全真即可</li>
+</ul>
+</li>
+<li><h5 id="对赋值进行讨论"><a href="#对赋值进行讨论" class="headerlink" title="对赋值进行讨论"></a><strong>对赋值进行讨论</strong></h5><ul>
+<li>要证明A⇒B：<ul>
+<li>只要证明A的任意一个成真赋值都是B的成真赋值</li>
+<li>(or)只要证明B的任意一个成假赋值都是A的成假赋值</li>
+</ul>
+</li>
+<li>要证明A⟺B：<ul>
+<li>要证明A⇒B &amp; B⇒A</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="推演法"><a href="#推演法" class="headerlink" title="推演法"></a><strong>推演法</strong></h5><ul>
+<li>利用已知的重言式、逻辑等价式和逻辑蕴涵式，采用代入 &amp; 替换原理进行推演</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）赋值法证明逻辑等价式：-A∨B-→C-⟺-A→C-∧-B→C"><a href="#2）赋值法证明逻辑等价式：-A∨B-→C-⟺-A→C-∧-B→C" class="headerlink" title="2）赋值法证明逻辑等价式：(A∨B)→C ⟺ (A→C)∧(B→C)"></a>2）赋值法证明逻辑等价式：<code>(A∨B)→C ⟺ (A→C)∧(B→C)</code></h4><ul>
+<li>先证明：左侧 ⇒ 右侧</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">设：α是(A∨B)→C的任意一个成真赋值</span><br><span class="line">if α(C)=1：</span><br><span class="line">    左式全真</span><br><span class="line">if α(C)=0：</span><br><span class="line">    有唯一解α = [0,0,0]</span><br><span class="line"></span><br><span class="line">将上述两解代入右式</span><br><span class="line">if α(C)=1：</span><br><span class="line">    (A→1)∧(B→1) = 1</span><br><span class="line">if α = [0,0,0]:</span><br><span class="line">    (0→0)∧(0→0) = 1</span><br><span class="line">    </span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>后证明：右侧 ⇒ 左侧</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设：α是(A∨B)→C的任意一个成假赋值</span><br><span class="line">则 C=0，A∨B = 1</span><br><span class="line">则 (A→C)∧(B→C)全假</span><br><span class="line"></span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+
+<h4 id="3）推演法证明逻辑等价式：-A∨B-→C-⟺-A→C-∧-B→C"><a href="#3）推演法证明逻辑等价式：-A∨B-→C-⟺-A→C-∧-B→C" class="headerlink" title="3）推演法证明逻辑等价式：(A∨B)→C ⟺ (A→C)∧(B→C)"></a>3）推演法证明逻辑等价式：<code>(A∨B)→C ⟺ (A→C)∧(B→C)</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(A∨B)→C</span><br><span class="line">⇒﹁(A∨B)∨C #等值蕴含式</span><br><span class="line">⇒(﹁A∧﹁B)∨C #德摩根律</span><br><span class="line">⇒(﹁A∨C)∧(﹁B∨C) #分配律</span><br><span class="line">⇒(A→C)∧(B→C) #等值蕴含式</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="二、范式"><a href="#二、范式" class="headerlink" title="二、范式"></a>二、范式</h2><h3 id="1-范式及其基本术语"><a href="#1-范式及其基本术语" class="headerlink" title="1. 范式及其基本术语"></a>1. 范式及其基本术语</h3><h4 id="1）范式概念-amp-基本术语"><a href="#1）范式概念-amp-基本术语" class="headerlink" title="1）范式概念 &amp; 基本术语"></a>1）范式概念 &amp; 基本术语</h4><ul>
+<li><h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><ul>
+<li>每个命题公式都会存在很多与之逻辑等价的公式</li>
+</ul>
+</li>
+<li><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><ul>
+<li>在命题公式的多个逻辑等价的形式中，较为符合” 标准 “或“ 规范 ”的一种形式</li>
+</ul>
+</li>
+<li><h5 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h5><ul>
+<li>文字：命题常元、变元和它们的否定<ul>
+<li>正文字：p</li>
+<li>负文字：﹁q</li>
+</ul>
+</li>
+<li>析取子句：文字或者若干文字的析取：p ，p v q，﹁p v q</li>
+<li>合取子句：文字或者若干文字的合取：p ，p ∧ q，﹁p ∧ q</li>
+<li>互补文字对：一对正文字 &amp; 负文字：p&amp;﹁p</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）析取范式"><a href="#2）析取范式" class="headerlink" title="2）析取范式"></a>2）析取范式</h4><ul>
+<li><p>定义（满足下列两个条件）</p>
+<p>  公式 A’ 称作公式A的析取范式：</p>
+<ul>
+<li>A’ ⟺ A</li>
+<li>A’ 为合取子句或若干合取子句的析取</li>
+</ul>
+</li>
+<li><h5 id="形式"><a href="#形式" class="headerlink" title="形式"></a>形式</h5><ul>
+<li>没有<code>→</code>、<code>↔</code></li>
+<li>用<code>∨</code>连接</li>
+<li>括号里只有<code>∧</code></li>
+</ul>
+</li>
+<li><h5 id="举例-1"><a href="#举例-1" class="headerlink" title="举例"></a>举例</h5><ul>
+<li>﹁p v q</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）合取范式"><a href="#3）合取范式" class="headerlink" title="3）合取范式"></a>3）合取范式</h4><ul>
+<li><p>定义（满足下列两个条件）</p>
+<p>  公式 A’ 称作公式A的析取范式：</p>
+<ul>
+<li>A’ ⟺ A</li>
+<li>A’ 为析取子句或若干析取子句的合取</li>
+</ul>
+</li>
+<li><h5 id="形式-1"><a href="#形式-1" class="headerlink" title="形式"></a>形式</h5><ul>
+<li>没有<code>→</code>、<code>↔</code></li>
+<li>用<code>∧</code>连接</li>
+<li>括号里只有<code>∨</code></li>
+</ul>
+</li>
+<li><h5 id="举例-2"><a href="#举例-2" class="headerlink" title="举例"></a>举例</h5><ul>
+<li>﹁p ∧ q</li>
+<li>﹁p ∨ q ==也可以算作合取范式==</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-求解范式的一般步骤"><a href="#2-求解范式的一般步骤" class="headerlink" title="2. 求解范式的一般步骤"></a>2. 求解范式的一般步骤</h3><h4 id="1）求命题公式的范式"><a href="#1）求命题公式的范式" class="headerlink" title="1）求命题公式的范式"></a>1）求命题公式的范式</h4><ul>
+<li>利用逻辑等价式、代入&amp;替换原理，可以求出任意一个公式的析取范式和合取范式</li>
+</ul>
+<h4 id="2）范式用于重言式-amp-矛盾式的识别"><a href="#2）范式用于重言式-amp-矛盾式的识别" class="headerlink" title="2）范式用于重言式 &amp; 矛盾式的识别"></a>2）范式用于重言式 &amp; 矛盾式的识别</h4><ul>
+<li><h5 id="重言式识别"><a href="#重言式识别" class="headerlink" title="重言式识别"></a>重言式识别</h5><ul>
+<li>合取范式中，每个析取子句都包含了至少一个互补文字对</li>
+<li>（<strong>﹁p ∨p</strong>∨ q）∧（<strong>﹁q ∨q</strong>∨ p）</li>
+<li>==两互反命题的析取是1，所有1的合取仍是1==</li>
+</ul>
+</li>
+<li><h5 id="矛盾式识别"><a href="#矛盾式识别" class="headerlink" title="矛盾式识别"></a>矛盾式识别</h5><ul>
+<li>析取范式中，每个合取子句都包含了至少一个互补文字对</li>
+<li>（<strong>﹁p ∧p</strong>∧ q）∨（<strong>﹁q ∧q</strong>∧ p）</li>
+<li>==两互反命题的合取是0，所有0的析取仍是0==</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）求析取-amp-合取范式的一般步骤"><a href="#3）求析取-amp-合取范式的一般步骤" class="headerlink" title="3）求析取 &amp; 合取范式的一般步骤"></a>3）求析取 &amp; 合取范式的一般步骤</h4><p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200804144500323.png" alt="image-20200804144500323"></p>
+<h4 id="4）范式的唯一性问题"><a href="#4）范式的唯一性问题" class="headerlink" title="4）范式的唯一性问题"></a>4）范式的唯一性问题</h4><ul>
+<li>一个公式的析取范式 &amp; 合取范式都<strong>不是唯一</strong>的</li>
+<li>公式的析取范式可能<strong>同时又是</strong>合取范式</li>
+<li>并未达到我们设立范式的初衷：唯一性</li>
+<li>能否找到<strong>最为规范</strong>的范式？==能，请看下一节==</li>
+</ul>
+<h3 id="3-主范式"><a href="#3-主范式" class="headerlink" title="3. 主范式"></a>3. 主范式</h3><h4 id="1）背景"><a href="#1）背景" class="headerlink" title="1）背景"></a>1）背景</h4><ul>
+<li>需要一种唯一性的范式的形式 ==于是主范式应运而生==</li>
+</ul>
+<h4 id="2）定义"><a href="#2）定义" class="headerlink" title="2）定义"></a>2）定义</h4><ul>
+<li><h5 id="主析取范式-需同时满足下列2点"><a href="#主析取范式-需同时满足下列2点" class="headerlink" title="主析取范式 ==需同时满足下列2点=="></a>主析取范式 ==需同时满足下列2点==</h5><ul>
+<li>公式 A’ 称作公式A的<strong>主</strong>析取范式：</li>
+<li>A’ 中的每一个合取子句里p1, p2…  pn均恰出现一次</li>
+</ul>
+</li>
+<li><h5 id="主合取范式"><a href="#主合取范式" class="headerlink" title="主合取范式"></a>主合取范式</h5><ul>
+<li>公式 A’ 称作公式A的**主合取范式：</li>
+<li>A’ 中的每一个析取子句里p1, p2…  pn均恰出现一次</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）主范式的存在以及唯一性"><a href="#3）主范式的存在以及唯一性" class="headerlink" title="3）主范式的存在以及唯一性"></a>3）主范式的存在以及唯一性</h4><ul>
+<li>主析取、合取范式存在吗？</li>
+<li>如果存在的话唯一吗？</li>
+</ul>
+<h4 id="4）主析取范式存在唯一性-证明"><a href="#4）主析取范式存在唯一性-证明" class="headerlink" title="4）主析取范式存在唯一性 证明"></a>4）主析取范式<em>存在唯一性</em> 证明</h4><ul>
+<li><h5 id="约定"><a href="#约定" class="headerlink" title="约定"></a>约定</h5><ul>
+<li><p>合取子句中的文字，按照其包含的变元下标，从<strong>小到大排列</strong></p>
+</li>
+<li><p>对于包含所有变元p1 p2… pn的，并排列好文字顺序的合取子句，称为<strong>极小项</strong>，记作m<del>i</del></p>
+</li>
+<li><p>int i，i对应的<strong>n位二进制</strong>表示描述了对应下标变元在合取子句中的否定状态。</p>
+</li>
+<li><p>如果该位是<strong>0</strong>，表示合取子句中得该位是一个<strong>负文字</strong>，否则是正文字</p>
+</li>
+<li><p>例如：<code>p1∧p2∧p3</code>记作m<del>7</del>(7=111)；<code>p1∧﹁p2∧﹁p3</code>记作m<del>4</del>(4=100)；</p>
+</li>
+<li><p><strong>主析取范式是极小项按照其下标从小到大排列的析取</strong> </p>
+</li>
+</ul>
+</li>
+<li><h5 id="对极小项进行研究："><a href="#对极小项进行研究：" class="headerlink" title="对极小项进行研究："></a>对<strong>极小项</strong>进行研究：</h5><ul>
+<li><p>包含所有变元</p>
+</li>
+<li><p>编号、排序</p>
+</li>
+<li><p>固定位置、</p>
+</li>
+<li><p>每个元素可取﹁p 或 p</p>
+</li>
+<li><p>以<code>∧</code>相连，是合取子句</p>
+</li>
+<li><p>举例：若有两个变元p &amp; q，就有且只有4个极小项</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>q</th>
+<th>﹁q</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>p</td>
+<td>q∧p(m<del>3</del>)</td>
+<td>﹁q∧p(m<del>1</del>)</td>
+</tr>
+<tr>
+<td>﹁p</td>
+<td>q∧﹁p(m<del>2</del>)</td>
+<td>﹁q∧﹁p(m<del>0</del>)</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><h5 id="极小项赋值引理"><a href="#极小项赋值引理" class="headerlink" title="极小项赋值引理"></a>极小项赋值引理</h5><ul>
+<li>极小项只有唯一的成真赋值</li>
+<li>且成真赋值中，每个变元的取值，等于极小项下标的二进制形式中变元下标所对应的二进制位的值</li>
+<li>例如：<ul>
+<li><code>p1∧p2∧p3</code>（m<del>7</del>）的唯一成真赋值是：p1=1，p2=1，p3=1</li>
+<li><code>p1∧﹁p2∧﹁p3</code>（m<del>4</del>）的唯一成真赋值是：p1=1，p2=0，p3=0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="极小项-amp-主析取范式的关系"><a href="#极小项-amp-主析取范式的关系" class="headerlink" title="极小项 &amp; 主析取范式的关系"></a>极小项 &amp; 主析取范式的关系</h5><ul>
+<li>主析取范式，包含的极小项的成真赋值，也是主析取范式的<strong>成真赋值</strong></li>
+<li>主析取范式的任意一个成真赋值，使其<strong>包含</strong>的某个极小项的成真赋值</li>
+<li>主析取范式<strong>不包含</strong>的极小项的成真赋值，是主析取范式的成假赋值</li>
+</ul>
+</li>
+<li><h5 id="证明1（内含构造步骤-）"><a href="#证明1（内含构造步骤-）" class="headerlink" title="证明1（内含构造步骤 ）"></a>证明1（内含<em>构造步骤</em> ）</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">假设A’是公式A（p1, p2, ...pn)的析取范式</span><br><span class="line"></span><br><span class="line">1. 如果：A&#39;中某个合取子句Ai,既不包含pj，也不包含﹁pj，那么我们将Ai展成下列形式：</span><br><span class="line">    Ai ⟺ Ai∧1 ⟺ Ai∧（pj∨﹁pj) ⟺ (Ai∧pj)∨(Ai∧﹁pj)</span><br><span class="line">    </span><br><span class="line">2. 将合取子句中重复出现的命题变元、矛盾式消去，将重复出现的合取子句消去</span><br><span class="line">    p∧p⟺p</span><br><span class="line">    p∧﹁p⟺0 </span><br><span class="line">    Ai∨Ai ⟺ Ai</span><br><span class="line">    </span><br><span class="line">3. 最后：将合取子句整理变元顺序，成为极小项，并得到主析取范式A&#39;&#39;    </span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><h5 id="证明2（反证法）"><a href="#证明2（反证法）" class="headerlink" title="证明2（反证法）"></a>证明2（反证法）</h5>  <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">假设公式A（p1, p2, ...pn)存在两个不同的主析取范式B &amp; C</span><br><span class="line">因为：A⟺B &amp; A⟺C,</span><br><span class="line">所以：B⟺C</span><br><span class="line"></span><br><span class="line">因为：B &amp; C是两个不同的主析取范式，那么一定存在某个极小项mi，只出现在B或出现在C中，不妨设mi只出现在B中，不出现在C中</span><br><span class="line">而：mi的成真赋值是B的成真赋值，却是C的成假赋值</span><br><span class="line">与B⟺C矛盾</span><br><span class="line"></span><br><span class="line">所以：B &amp; C必然相同，公式A（p1, p2, ...pn)的主析取范式是唯一的命题公式A的等值分类</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="命题公式A的等值分类"><a href="#命题公式A的等值分类" class="headerlink" title="命题公式A的等值分类"></a>命题公式A的等值分类</h5><ul>
+<li>具有相同主析取范式的公式都是<strong>等值</strong>的，属于同一个等值类，否则属于不同的等值类</li>
+<li>虽然公式的数量无限多，但<strong>等值类的数量</strong>是<strong>有限</strong>的</li>
+<li>极小项的数量为<kbd>N=2^n^ </kbd></li>
+<li>由极小项组合而成的主析取范式的数量为<kbd>2^N^ </kbd></li>
+<li>等值类的数量 = 主析取范式的数量</li>
+</ul>
+</li>
+</ul>
+<h4 id="5）主合取范式的性质与主析取范式相对称"><a href="#5）主合取范式的性质与主析取范式相对称" class="headerlink" title="5）主合取范式的性质与主析取范式相对称"></a>5）主合取范式的性质与主析取范式相对称</h4><ul>
+<li><strong>极大项</strong> &amp; <strong>成假赋值</strong></li>
+<li>主合取范式的<strong>存在唯一性</strong></li>
+<li>主合取范式的构造步骤</li>
+<li>命题公式A的<strong>等值分类</strong></li>
+</ul>
+<h3 id="4-联结词集完备性"><a href="#4-联结词集完备性" class="headerlink" title="4. 联结词集完备性"></a>4. 联结词集完备性</h3><p>无论是主析取范式/主合取范式，他们只用到了3个联结词：否定 / 析取 / 合取</p>
+<p>那么为什么三个联结词就足以代表所有的命题公式了呢？</p>
+<h4 id="1）真值函数"><a href="#1）真值函数" class="headerlink" title="1）真值函数"></a>1）真值函数</h4><ul>
+<li>每一个等值类，都对应唯一的一个真值函数<kbd>F（p1, p2, ...pn)</kbd></li>
+<li>真值函数的每个变元的<strong>定义域</strong>是{0,1}，<strong>值域</strong>是{0,1}</li>
+<li>真值函数与相应等值类中的每个命题公式<strong>等值</strong></li>
+<li>真值函数与等值类是<strong>一一对应</strong>的</li>
+</ul>
+<h4 id="2）功能完备集"><a href="#2）功能完备集" class="headerlink" title="2）功能完备集"></a>2）功能完备集</h4><ul>
+<li><h5 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>如果任意一个真值函数，都可以用<strong>仅</strong>包含某个<strong>联结词集</strong>中的联结词的命题公式表示，则称这个联结词集为<strong>功能完备集</strong></li>
+</ul>
+</li>
+<li><h5 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h5><ul>
+<li>命题公式中用到的所有联结词</li>
+</ul>
+</li>
+<li><h5 id="举例-3"><a href="#举例-3" class="headerlink" title="举例"></a>举例</h5><ul>
+<li>目前使用的 {→，∨，∧，↔，﹁}是功能完备集</li>
+<li>我们注意到：任意真值函数都可以用主析取范式来表示，而主析取范式中只有三种联结词{∨，∧，﹁}，所以此为功能完备集</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）冗余联结词"><a href="#3）冗余联结词" class="headerlink" title="3）冗余联结词"></a>3）冗余联结词</h4><ul>
+<li><h5 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>在一个联结词集中，如果某个联结词可以用集合中<strong>其他联结词来定义</strong>，则这个联结词称为为冗余联结词</li>
+</ul>
+</li>
+<li><h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><ul>
+<li><p>{==→==，∨，∧，==↔==，﹁}是否存在冗余联结词？</p>
+</li>
+<li><p>{∨，∧，﹁}是否存在冗余联结词？</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">证明：∨可以被代替</span><br><span class="line">A∨B</span><br><span class="line">⇒﹁﹁(A∨B) #双重否定律</span><br><span class="line">⇒﹁(﹁A∧﹁B) #德摩根律</span><br><span class="line"></span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>{→，﹁}是功能完备集</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4）功能完备集-amp-极小集"><a href="#4）功能完备集-amp-极小集" class="headerlink" title="4）功能完备集 &amp; 极小集"></a>4）功能完备集 &amp; 极小集</h4><ul>
+<li><p><strong>欲证明{→，﹁}是功能完备集</strong></p>
+<ul>
+<li>证明思路：从一个已知的功能完备集中去掉冗余连接词，直到得到该集</li>
+</ul>
+</li>
+<li><h5 id="极小集"><a href="#极小集" class="headerlink" title="极小集"></a>极小集</h5><ul>
+<li><p>如果一个功能完备集<strong>不含任何冗余</strong>连接词，则称这个功能完备集为<strong>极小</strong>的。</p>
+</li>
+<li><p><kbd>{→，﹁}</kbd> <kbd>{∨，﹁}</kbd> <kbd>{∧，﹁}</kbd>都是极小功能完备集</p>
+</li>
+<li><p>仅包含单个联结词的功能完备集：<code>↓</code>（Peirce记号）</p>
+<ul>
+<li><p>p↓q ⟺﹁(p∨q)</p>
+  <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.证明：↓可定义﹁</span><br><span class="line">    ﹁p ⟺ ﹁(p∨p) ⟺ p↓p</span><br><span class="line">2.证明：↓可定义∨</span><br><span class="line">    p∨q ⟺ ﹁﹁(p∨q) ⟺ ﹁(p↓q) ⟺(p↓q)↓(p↓q)</span><br><span class="line">    </span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5）非功能完备集证明"><a href="#5）非功能完备集证明" class="headerlink" title="5）非功能完备集证明"></a>5）非功能完备集证明</h4><ul>
+<li>如何证明<strong>不是</strong>功能完备集？<ul>
+<li>并无统一办法</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、命题演算形式系统"><a href="#三、命题演算形式系统" class="headerlink" title="三、命题演算形式系统"></a>三、命题演算形式系统</h2><h3 id="1-形式系统和证明、演绎"><a href="#1-形式系统和证明、演绎" class="headerlink" title="1. 形式系统和证明、演绎"></a>1. 形式系统和证明、演绎</h3><h4 id="1）形式系统"><a href="#1）形式系统" class="headerlink" title="1）形式系统"></a>1）形式系统</h4><ul>
+<li><h5 id="重言式反映了人类逻辑思维的基本规律"><a href="#重言式反映了人类逻辑思维的基本规律" class="headerlink" title="重言式反映了人类逻辑思维的基本规律"></a>重言式反映了人类逻辑思维的基本规律</h5><ul>
+<li>排中律<ul>
+<li>A∨¬A⟺1</li>
+</ul>
+</li>
+<li>矛盾律<ul>
+<li>A∧¬A⟺0</li>
+</ul>
+</li>
+<li>假言推论<ul>
+<li>A∧(A→B)⇒B</li>
+</ul>
+</li>
+<li>归谬论<ul>
+<li>(A→B)∧(A→¬B)⟺¬A</li>
+</ul>
+</li>
+<li>穷举推理<ul>
+<li>(A∨B)∧(A→C)∧(B→C)⟺C</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="背景-1"><a href="#背景-1" class="headerlink" title="背景"></a>背景</h5><ul>
+<li>依据上述理论进行推演，难以反映人类思维推理过程</li>
+<li>需要将推理过程进行严格化、严密化</li>
+<li>像数学计算一样进行推理</li>
+<li>从而产生形式系统</li>
+</ul>
+</li>
+<li><h5 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h5><ul>
+<li>形式系统是一个<strong>符号体系</strong></li>
+<li>系统中的概念由符号表示，推理过程即符号变换的过程</li>
+<li>以若干最基本的重言式作为基础称<strong>公理</strong></li>
+<li>系统内符号变换的依据是：若干确保由重言式导出重言式的规则，称为<strong>推理规则</strong></li>
+<li>公理和推理规则确保系统内，由<strong>正确的前提</strong>总能得到<strong>正确的推理结果</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="2）证明-amp-演绎"><a href="#2）证明-amp-演绎" class="headerlink" title="2）证明 &amp; 演绎"></a>2）证明 &amp; 演绎</h4><ul>
+<li><h5 id="证明（Proof）"><a href="#证明（Proof）" class="headerlink" title="证明（Proof）"></a>证明（Proof）</h5><ul>
+<li>公式序列A1，A2…., Am，称作Am的一个证明，如果Ai(1≤i≤m):<ul>
+<li>或者是<strong>公理</strong></li>
+<li>或者是Aj1，Aj2…, Ajk(j1，…jk&lt;i)用<strong>推理规则推得</strong>==（每一个证明都是由它前面的证明推理而来）==</li>
+</ul>
+</li>
+<li>当这样的证明存在时，称Am为系统的<strong>定理</strong>，记作 <code>ㅏAm</code></li>
+</ul>
+</li>
+<li><h5 id="演绎（Deduction）"><a href="#演绎（Deduction）" class="headerlink" title="演绎（Deduction）"></a>演绎（Deduction）</h5><ul>
+<li>设Γ为一公式集合。==(跟<strong>证明</strong>就差了一个Γ)==</li>
+<li>公式序列A1，A2…., Am，称作Am的以Γ为前提的演绎，如果Ai(1≤i≤m):<ul>
+<li>或者是<strong>Γ中的公式</strong></li>
+<li>或者是<strong>公理</strong></li>
+<li>或者是Aj1，Aj2…, Ajk(j1，…jk&lt;i)用<strong>推理规则推得</strong>==（每一个公式都是由它前面的公式推理而来）==</li>
+</ul>
+</li>
+<li>当这样的证明存在时，称Am为Γ的<strong>演绎结果</strong>，记作 <code>ΓㅏAm</code></li>
+<li>称Γ与Γ的成员，为Am的前提</li>
+<li><strong>证明是演绎在Γ为空集时的特例</strong>==（没有任何一个条件的时候就可以推出Am的一个特例）==</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-命题演算形式系统PC"><a href="#2-命题演算形式系统PC" class="headerlink" title="2. 命题演算形式系统PC"></a>2. 命题演算形式系统PC</h3><p>接上节，展示一个实际的形式系统的构造过程。</p>
+<p>将将命题及重言式变换演算构造为系统形式，称为<strong>命题演算形式系统（Proposition Calculus，PC）</strong></p>
+<h4 id="1）符号系统"><a href="#1）符号系统" class="headerlink" title="1）符号系统"></a>1）符号系统</h4><ul>
+<li><h5 id="命题变元"><a href="#命题变元" class="headerlink" title="命题变元"></a>命题变元</h5><ul>
+<li>p, q, r, s</li>
+</ul>
+</li>
+<li><h5 id="命题常元"><a href="#命题常元" class="headerlink" title="命题常元"></a>命题常元</h5><ul>
+<li>t, f</li>
+</ul>
+</li>
+<li><h5 id="联结词"><a href="#联结词" class="headerlink" title="联结词"></a>联结词</h5><ul>
+<li>﹁, →（是功能完备集）</li>
+</ul>
+</li>
+<li><h5 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h5><ul>
+<li>（， ）</li>
+</ul>
+</li>
+<li><h5 id="命题公式（规定了字符的合法组合方式）"><a href="#命题公式（规定了字符的合法组合方式）" class="headerlink" title="命题公式（规定了字符的合法组合方式）"></a>命题公式（规定了字符的合法组合方式）</h5><ul>
+<li>命题变元 &amp; 命题常元是公式</li>
+<li>若：A, B 是公式，则（﹁A），（A→B）均为公式<ul>
+<li>优先级 &amp; 括号省略约定同前</li>
+</ul>
+</li>
+<li>只有有限次使用上面两条规则得到的符号串才是命题公式</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）公理"><a href="#2）公理" class="headerlink" title="2）公理"></a>2）公理</h4><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>公理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>A→(B→A)</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>[A→(B→C)]→[(A→B)→(A→C)]</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>(¬A→¬B)→(B→A)</td>
+</tr>
+</tbody></table>
+<h4 id="3）推理规则"><a href="#3）推理规则" class="headerlink" title="3）推理规则"></a>3）推理规则</h4><ul>
+<li>A, A→B / B (分离规则)<ul>
+<li>意为：由A∧(A→B) ⇒ B </li>
+</ul>
+</li>
+</ul>
+<h4 id="4）PC的性质"><a href="#4）PC的性质" class="headerlink" title="4）PC的性质"></a>4）PC的性质</h4><ul>
+<li><h5 id="合理性（Soundness）"><a href="#合理性（Soundness）" class="headerlink" title="合理性（Soundness）"></a>合理性（Soundness）</h5><ul>
+<li><p>在证明中：如果公式a是系统PC的定理，则a是重言式 （若ㅏ<del>PC</del>A，则⇒A）</p>
+<ul>
+<li>==在PC中，A能够被证明。换句话说，存在一个序列，能使得A作为最后一个公式由前面公式推出，则A称为定理。==</li>
+<li>==重言式是逻辑概念，不是PC概念==</li>
+</ul>
+</li>
+<li><p>在演绎中：如果A是公式集合Γ的演绎结果，那么A是Γ的逻辑结果（若Γㅏ<del>PC</del>A，则Γ⇒A）</p>
+</li>
+<li><p>说明PC中的定理和演绎结果都合乎逻辑，存在一个推理过程：</p>
+<div align='center'>公理 ⇒ 证明序列 ⇒ 确认定理
+</li>
+</ul>
+</li>
+<li><h5 id="一致性（Consistency）"><a href="#一致性（Consistency）" class="headerlink" title="一致性（Consistency）"></a>一致性（Consistency）</h5><ul>
+<li>没有公式A，使得ㅏ<del>PC</del>A &amp; ㅏ<del>PC</del>﹁A同时出现</li>
+<li>==（不会出现自相矛盾的情况，矛盾律）==</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h5 id="完备性（Completeness）"><a href="#完备性（Completeness）" class="headerlink" title="完备性（Completeness）"></a>完备性（Completeness）</h5><ul>
+<li>在证明中：如果公式A是重言式，则A一定是PC中的定理</li>
+<li>在演绎中：如果公式A是Γ的逻辑结果，则A一定是Γ的演绎结果</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-PC中的定理证明"><a href="#3-PC中的定理证明" class="headerlink" title="3. PC中的定理证明"></a>3. PC中的定理证明</h3><p>选取两个实例说明：1个是证明，1个是演绎</p>
+<h4 id="1）证明定理：ㅏPCA→A"><a href="#1）证明定理：ㅏPCA→A" class="headerlink" title="1）证明定理：ㅏPCA→A"></a>1）证明定理：ㅏ<del>PC</del>A→A</h4><ul>
+<li><h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><ul>
+<li>A→A虽然是一个重言式，是逻辑真理</li>
+<li>但是在PC中，并没有这样的公理，所以需要证明才能成为一个定理</li>
+</ul>
+</li>
+<li><h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>公理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>A→(B→A)</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>[A→(B→C)]→[(A→B)→(A→C)]</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>(¬A→¬B)→(B→A)</td>
+</tr>
+</tbody></table>
+</li>
+<li><h5 id="证明-1"><a href="#证明-1" class="headerlink" title="证明"></a>证明</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">令 B⟺(A→A), C⟺A</span><br><span class="line">公理A2可表述为：</span><br><span class="line">【1】    [A→((A→A)→A)]→[(A→(A→A))→(A→A)]</span><br><span class="line">    </span><br><span class="line">公理A1可表述为：</span><br><span class="line">【2】    A→((A→A)→A)</span><br><span class="line">    </span><br><span class="line">发现公式【2】是公式【1】的前件，则有分离规则：</span><br><span class="line">【3】    (A→(A→A))→(A→A)</span><br><span class="line">    </span><br><span class="line">因为可由【1】【2】推出公式【3】，因此【3】为重言式</span><br><span class="line"></span><br><span class="line">令 B⟺A</span><br><span class="line">公式A1可表述为：</span><br><span class="line">【4】    A→(A→A)</span><br><span class="line">    </span><br><span class="line">发现公式【4】是公式【3】的前件，则有分离规则：</span><br><span class="line">【5】    A→A</span><br><span class="line"></span><br><span class="line">因为可由【3】【4】推出公式【5】，因此【5】为重言式</span><br><span class="line"></span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="2）演绎：-A-B→-A→C-ㅏB→C"><a href="#2）演绎：-A-B→-A→C-ㅏB→C" class="headerlink" title="2）演绎：{A,B→(A→C)} ㅏB→C"></a>2）演绎：{A,B→(A→C)} ㅏB→C</h4><ul>
+<li><h5 id="演绎"><a href="#演绎" class="headerlink" title="演绎"></a>演绎</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A:前提</span><br><span class="line">B→(A→C):前提</span><br><span class="line">A→(B→A)：公理A1</span><br><span class="line">B→A：1，3分离规则</span><br><span class="line">[B→(A→C)]→[(B→A)→(B→C)]：公理A2</span><br><span class="line">(B→A)→(B→C)：2,5分离规则</span><br><span class="line">B→C：4,6分离规则</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="演绎图（从下向上）"><a href="#演绎图（从下向上）" class="headerlink" title="演绎图（从下向上）"></a>演绎图（从下向上）</h5><p>  <img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200805192932391.png" alt="image-20200805192932391"></p>
+</li>
+</ul>
+<h3 id="4-三个元定理"><a href="#4-三个元定理" class="headerlink" title="4. 三个元定理"></a>4. 三个元定理</h3><h4 id="1）背景-1"><a href="#1）背景-1" class="headerlink" title="1）背景"></a>1）背景</h4><ul>
+<li><p>证明推理 &amp; 演绎推理，过程相当复杂曲折</p>
+<ul>
+<li>本节的方法能够使证明过程更加顺畅</li>
+<li>本节内容：3个元定理</li>
+</ul>
+</li>
+<li><p>元定理</p>
+<ul>
+<li><p>元：关于某事的某事（如元数据：关于数据的一些描述的数据）</p>
+</li>
+<li><p>元定理：是关于定理证明的一些定理</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）演绎定理"><a href="#2）演绎定理" class="headerlink" title="2）演绎定理"></a>2）演绎定理</h4><ul>
+<li><h5 id="定义-5"><a href="#定义-5" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>对任意公式集合Γ  &amp;公式A，B<ul>
+<li>ΓㅏA→B 当且仅当 Γ∪{A}ㅏB</li>
+<li>当Γ = ∅时，ㅏA→B当且仅当{A}ㅏB，或AㅏB</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h5><ul>
+<li>==A是前提，B是目的公式，Γ是公理==</li>
+<li>==当Γ = ∅时，演绎可以变为证明==</li>
+</ul>
+</li>
+<li><h5 id="证明-2"><a href="#证明-2" class="headerlink" title="证明"></a>证明</h5><ul>
+<li>必要性<ul>
+<li>有A→B，加上A，分离规则得到B</li>
+</ul>
+</li>
+<li>充分性<ul>
+<li>有B，以及公理A1<code>B→(A→B)</code>,分离规则得到A→B</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）穷举定理"><a href="#3）穷举定理" class="headerlink" title="3）穷举定理"></a>3）穷举定理</h4><ul>
+<li><h5 id="定义-6"><a href="#定义-6" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>对任意公式集合Γ  &amp;公式A，B<ul>
+<li>若Γ∪{A}ㅏB，Γ∪{﹁A}ㅏB，那么ΓㅏB</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="意义-1"><a href="#意义-1" class="headerlink" title="意义"></a>意义</h5><ul>
+<li>如果一个前提能推出结论，这个前提的反面也能推出相同的结论，</li>
+<li>说明结论的<strong>成立</strong>与此前提是否成立<strong>无关</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4）归谬定理"><a href="#4）归谬定理" class="headerlink" title="4）归谬定理"></a>4）归谬定理</h4><ul>
+<li><h5 id="定义-7"><a href="#定义-7" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>对任意公式集合Γ  &amp;公式A，B<ul>
+<li>若Γ∪{﹁A}ㅏB，Γ∪{﹁A}ㅏ﹁B，那么ΓㅏA</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="意义-2"><a href="#意义-2" class="headerlink" title="意义"></a>意义</h5><ul>
+<li>同一组前提，能够推出<strong>互相矛盾</strong>的结果，就说明这组前提之间相互<strong>不一致</strong></li>
+<li>也就是说：总有一些前提是其余前提的<strong>对立面</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="5）元定理简化证明实例"><a href="#5）元定理简化证明实例" class="headerlink" title="5）元定理简化证明实例"></a>5）元定理简化证明实例</h4><ul>
+<li><h5 id="ㅏ﹁﹁A→A"><a href="#ㅏ﹁﹁A→A" class="headerlink" title="ㅏ﹁﹁A→A"></a>ㅏ﹁﹁A→A</h5></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">﹁﹁A →（﹁A→﹁﹁A）:公理1（A-B-A)</span><br><span class="line">﹁﹁A ㅏ﹁A→﹁﹁A :</span><br><span class="line">&#123;﹁﹁A, ﹁A&#125;ㅏ﹁﹁A [1]</span><br><span class="line"></span><br><span class="line">﹁A →（﹁﹁A→﹁A）:公理1（A-B-A)</span><br><span class="line">&#123;﹁﹁A, ﹁A&#125;ㅏ﹁A [2]</span><br><span class="line"></span><br><span class="line">[1][2]用归谬定理：</span><br><span class="line">    ﹁﹁AㅏA ⟺ ㅏ﹁﹁A→A</span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="ㅏ-A→C-→-B→C-→-﹁A→﹁B-→C"><a href="#ㅏ-A→C-→-B→C-→-﹁A→﹁B-→C" class="headerlink" title="ㅏ(A→C)→{ (B→C) → [(﹁A→﹁B)→C] }"></a><strong>ㅏ(A→C)→{ (B→C) → [(﹁A→﹁B)→C] }</strong></h5></li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">根据演绎定理：</span><br><span class="line">    要证明：&#123;(A→C)，(B→C)，(﹁A→﹁B)&#125;ㅏC</span><br><span class="line">根据穷举定理：</span><br><span class="line">    &#123;(A→C)，(B→C)，(﹁A→﹁B)，A&#125;ㅏC易证</span><br><span class="line">    &#123;(A→C)，(B→C)，(﹁A→﹁B)，﹁A&#125;ㅏC易证</span><br><span class="line">    </span><br><span class="line">所以：&#123;(A→C)，(B→C)，(﹁A→﹁B)&#125;ㅏC成立</span><br><span class="line"></span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-定理判断问题"><a href="#5-定理判断问题" class="headerlink" title="5. 定理判断问题"></a>5. 定理判断问题</h3><h4 id="1）前言"><a href="#1）前言" class="headerlink" title="1）前言"></a>1）前言</h4><ul>
+<li>前面提到，证明定理需要从公理出发，通过一系列证明序列对目标公式进行确认</li>
+</ul>
+<div align='center'>公理 ⇒ 证明序列 ⇒ 确认定理
+
+<ul>
+<li>对于一个命题，能否找到这个证明的序列？</li>
+<li>我们先回顾一下形式系统的本质：符号串集合</li>
+</ul>
+<h4 id="2）形式系统-amp-符号串集合的关系"><a href="#2）形式系统-amp-符号串集合的关系" class="headerlink" title="2）形式系统 &amp; 符号串集合的关系"></a>2）形式系统 &amp; 符号串集合的关系</h4><ul>
+<li><h5 id="定义-8"><a href="#定义-8" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>形式系统定义，就是<strong>符号串集合</strong>的<strong>构造性</strong>定义</li>
+</ul>
+</li>
+<li><h5 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h5><ul>
+<li><strong>符号体系</strong>规定了符号串可能包含的字符（或字符的合法组合方式）<ul>
+<li>PC中的命题变元、命题常元和公式的定义</li>
+</ul>
+</li>
+<li><strong>公理</strong>规定了几个集合中的符号串（或这种符号串的模式）<ul>
+<li>PC中的公理，实质上是公理模式</li>
+</ul>
+</li>
+<li><strong>推理规则</strong>规定了从集合中已知符号串，变换生成集合中其他符号串的方法<ul>
+<li>PC中的分离规则</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）定理的判定涉及到符号串的构造过程"><a href="#3）定理的判定涉及到符号串的构造过程" class="headerlink" title="3）定理的判定涉及到符号串的构造过程"></a>3）定理的判定涉及到符号串的构造过程</h4><ul>
+<li><p>形式系统中的<strong>定理</strong>就是在集合中的<strong>符号串</strong></p>
+</li>
+<li><p>定理的<strong>证明</strong>过程就是符号串的<strong>构造</strong>过程</p>
+</li>
+<li><p>这个过程需要在<strong>有限</strong>步内结束</p>
+  <div align='center'>
+      变元、常元&公式 ⟺ 符号串的集合（符号体系）<br/>
+      形式系统 ⟺ 符号串集合有序的构造<br/>
+      定理 ⟺ 符号串<br/>
+      证明 ⟺ 符号串构造<br/>
+      公理 ⟺ 作为前提的符号串<br/>
+  </div>
+
+
+
+</li>
+</ul>
+<h4 id="4）定理判断问题"><a href="#4）定理判断问题" class="headerlink" title="4）定理判断问题"></a>4）定理判断问题</h4><ul>
+<li><h5 id="定理判断问题的不同角度："><a href="#定理判断问题的不同角度：" class="headerlink" title="定理判断问题的不同角度："></a>定理判断问题的不同角度：</h5><ul>
+<li>从定理角度<ul>
+<li>给定一个命题公式，判定是否形式系统中的定理，给出定理的<strong>证明</strong></li>
+</ul>
+</li>
+<li>从字符串的角度<ul>
+<li>给定一个符号串，判定是否在集合里，给出构造的<strong>过程</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="定理判断问题描述："><a href="#定理判断问题描述：" class="headerlink" title="定理判断问题描述："></a>定理判断问题描述：</h5><ul>
+<li>能否<strong>单靠</strong>形式系统<strong>本身</strong>的公理和推理规则，</li>
+<li>在<strong>有限</strong>步骤内，</li>
+<li>判定定理 &amp; <strong>非</strong>定理？</li>
+</ul>
+</li>
+</ul>
+<p>我们从一个简单的例子。</p>
+<h4 id="5）一个简单的形式系统MIU"><a href="#5）一个简单的形式系统MIU" class="headerlink" title="5）一个简单的形式系统MIU"></a>5）一个简单的形式系统MIU</h4><ul>
+<li><h5 id="形式系统的构造"><a href="#形式系统的构造" class="headerlink" title="形式系统的构造"></a>形式系统的构造</h5><ul>
+<li><p>符号体系</p>
+<ul>
+<li>MIU三个字符串</li>
+</ul>
+</li>
+<li><p>公理</p>
+<ul>
+<li>MI为重言式</li>
+</ul>
+</li>
+<li><p>推理规则</p>
+<ul>
+<li><p>如果串的最后一个符号是I，则可以加上一个U</p>
+<div align='center' >xI ⇒ xIU    
+</li>
+<li><p>如果串符合Mx，则可以再加上x而生成Mxx，x代表任何一个有M、I、U组成的串</p>
+<div align='center'> Mx⇒ Mxx
+</li>
+<li><p>如果串中连续出现3个I，则可以用U代替III得到新串</p>
+<div align='center'>xIIIy ⇒ xUy
+</li>
+<li><p>如果串中出现UU，则可以将UU删去，得到新串</p>
+<div align='center'>xUUy ⇒ xy
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="判定问题："><a href="#判定问题：" class="headerlink" title="判定问题："></a>判定问题：</h5><ul>
+<li>MU是否是系统中的串？</li>
+</ul>
+</li>
+</ul>
+<h4 id="6）MIU的定理树"><a href="#6）MIU的定理树" class="headerlink" title="6）MIU的定理树"></a>6）MIU的定理树</h4><ul>
+<li>由公理和推理规则，我们可以构造<strong>定理树</strong></li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200807115727157.png" alt="image-20200807115727157"></p>
+<ul>
+<li>但无法保证在<strong>有限步骤</strong>内找到定理所在位置<ul>
+<li>MU如果客观上不是定理，</li>
+<li>单凭MIU本身构造的定理树，然后进行搜索，是不行的</li>
+<li>需要另寻方法：求助系统之外的定律（数论）</li>
+</ul>
+</li>
+</ul>
+<h4 id="7）一个MIU的同构系统310"><a href="#7）一个MIU的同构系统310" class="headerlink" title="7）一个MIU的同构系统310"></a>7）一个MIU的同构系统310</h4><p>利用数论构造一个与MIU同构的系统310。</p>
+<ul>
+<li><h5 id="同构"><a href="#同构" class="headerlink" title="同构"></a>同构</h5><ul>
+<li><p>结构上完全一样，只是用另外的符号来代表、代替这个MIU应用</p>
+</li>
+<li><p>应用：</p>
+<div align='center'> M ⟺ 3<br/>I ⟺ 1<br/>U ⟺ 0<br/>
+</li>
+</ul>
+</li>
+<li><h5 id="重建形式系统"><a href="#重建形式系统" class="headerlink" title="重建形式系统"></a>重建形式系统</h5><ul>
+<li><p>符号体系</p>
+<ul>
+<li>310三个自然数</li>
+</ul>
+</li>
+<li><p>公理</p>
+<ul>
+<li>31在集合中</li>
+</ul>
+</li>
+<li><p>推理规则</p>
+<ul>
+<li><p>如果集合中有数以1结尾，则添一个0也是集合中的数</p>
+<div align='center' >x1 ⇒ x10    
+</li>
+<li><p>如果集合中有数以3开始，则把3后面的数再重复一次，添在末尾也是集合中的数。</p>
+<div align='center'> 3x⇒ 3xx
+</li>
+<li><p>如果集合中有数包含111，则把111替换成0也是集合中的数。</p>
+<div align='center'>x111y ⇒ x0y
+</li>
+<li><p>如果集合中有数包含00，则去掉00的数也是集合中的数。</p>
+<div align='center'>x00y ⇒ xy
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a><strong>问题</strong></h5><ul>
+<li>30是不是集合中的数？</li>
+</ul>
+</li>
+</ul>
+<h4 id="8）310系统中的判定：回归MIU系统的结论"><a href="#8）310系统中的判定：回归MIU系统的结论" class="headerlink" title="8）310系统中的判定：回归MIU系统的结论"></a>8）310系统中的判定：回归MIU系统的结论</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">通过分析数的构造规则，我们发现集合中的数都不可能被3整除:</span><br><span class="line">    首先--31不能被3整除</span><br><span class="line">    其次--规则1~4，都无法从不能被3整除的数中，生成能被3整除的数</span><br><span class="line"></span><br><span class="line">而30可以被3整除</span><br><span class="line">所以30不属于这个集合</span><br><span class="line"></span><br><span class="line">得证。</span><br></pre></td></tr></table></figure>
+
+<p>对照MIU系统的结论：MU不是MIU系统中的定理</p>
+<h4 id="9-）PC系统的定理判定问题"><a href="#9-）PC系统的定理判定问题" class="headerlink" title="9 ）PC系统的定理判定问题"></a>9 ）PC系统的定理判定问题</h4><ul>
+<li><p>问题</p>
+<ul>
+<li>一个符合PC符号体系定义的命题公式，是否是PC中的定理？</li>
+<li>仅使用PC系统中公理和分离规则，<strong>难以保证</strong>能在有限步骤判定一个命题公式是否为定理</li>
+</ul>
+</li>
+<li><p>解决方案</p>
+<ul>
+<li>命题演算系统PC，有一个非常重要的同构：<strong>真值函数运算系统</strong></li>
+<li>只需要用<strong>真值表</strong>判定命题公式对应的真值函数是否为<strong>重言式</strong>，即可判定是否为PC中的定理</li>
+<li>真值表的运算是<strong>有限步骤</strong>内可以完成的</li>
+<li>真值表并不是PC中的成分哦，终于到了。 </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhonghuo.github.io/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%E5%8F%8A%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F/" data-id="ckdswfxva000360vma0mh6tr3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数理逻辑-基本概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
+  <time datetime="2020-08-13T14:28:53.839Z" itemprop="datePublished">2020-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、命题与联结词"><a href="#一、命题与联结词" class="headerlink" title="一、命题与联结词"></a>一、命题与联结词</h2><h3 id="1-数理逻辑介绍"><a href="#1-数理逻辑介绍" class="headerlink" title="1.数理逻辑介绍"></a>1.数理逻辑介绍</h3><h4 id="1）数理逻辑的前身：逻辑学"><a href="#1）数理逻辑的前身：逻辑学" class="headerlink" title="1）数理逻辑的前身：逻辑学"></a>1）数理逻辑的前身：逻辑学</h4><ul>
+<li><p>逻辑学定义：探索/阐述/确立有效的“<strong>推理原则</strong>”的学科。 </p>
+</li>
+<li><p>创始人：亚里士多德 </p>
+</li>
+<li><p>逻辑学最重要工作：三段论，大前提/小前提/结论 </p>
+</li>
+<li><p>逻辑学可能因为<strong>自然语言模糊性</strong>而损害其权威 </p>
+</li>
+</ul>
+<h4 id="2）数理逻辑的产生-发展"><a href="#2）数理逻辑的产生-发展" class="headerlink" title="2）数理逻辑的产生/发展"></a>2）数理逻辑的产生/发展</h4><ul>
+<li><h5 id="产生"><a href="#产生" class="headerlink" title="产生"></a>产生</h5><ul>
+<li>因而产生数理逻辑：使用<strong>数学方法</strong>研究关于推理/证明等问题的学科。</li>
+</ul>
+</li>
+<li><h5 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h5><ul>
+<li>🇩🇪莱布尼茨：设想创造一套符号语言，被称为先驱 </li>
+<li>🇬🇧布尔：开创者，《数学的逻辑分析》，创建了符号语言 </li>
+<li>🇩🇪弗雷格：《数论的基础》，引入<strong>量词</strong>，让学科更加完备 </li>
+<li>🇺🇸皮尔斯：引入更多符号，成为独立学科 </li>
+</ul>
+</li>
+</ul>
+<h4 id="3）数理逻辑内容：4大分支"><a href="#3）数理逻辑内容：4大分支" class="headerlink" title="3）数理逻辑内容：4大分支"></a>3）数理逻辑内容：4大分支</h4><p>数学史上 NO.3次大危机由是发现了集合论的<strong>逻辑悖论</strong>引起的 </p>
+<ul>
+<li><h5 id="公理集合论"><a href="#公理集合论" class="headerlink" title="公理集合论"></a>公理集合论</h5><ul>
+<li>悖论的提出→研究集合论的<strong>无矛盾性问题</strong>→产生了公理集合论 </li>
+</ul>
+</li>
+<li><h5 id="证明论"><a href="#证明论" class="headerlink" title="证明论"></a>证明论</h5><ul>
+<li>研究<strong>无矛盾性问题</strong>—→需要以数学理论体系的概念/命题/证明作为研究对象，研究数学系统的逻辑结构和证明的规律—→证明论 </li>
+</ul>
+</li>
+<li><h5 id="递归论"><a href="#递归论" class="headerlink" title="递归论"></a>递归论</h5><ul>
+<li>研可计算性的理论，与计算机的发展有密切联系 </li>
+</ul>
+</li>
+<li><h5 id="模型论"><a href="#模型论" class="headerlink" title="模型论"></a>模型论</h5><ul>
+<li>研究形式系统与数学模型之间的关系 </li>
+</ul>
+</li>
+</ul>
+<h4 id="4）课程内容"><a href="#4）课程内容" class="headerlink" title="4）课程内容"></a>4）课程内容</h4><ul>
+<li>四大分支中共同的基础部分<strong>命题演算</strong> &amp; <strong>谓词演算</strong></li>
+</ul>
+<h3 id="2-什么是命题（proposition）"><a href="#2-什么是命题（proposition）" class="headerlink" title="2.什么是命题（proposition）"></a>2.什么是命题（proposition）</h3><h4 id="1）命题的概念：对确定的对象做出判断的陈述句"><a href="#1）命题的概念：对确定的对象做出判断的陈述句" class="headerlink" title="1）命题的概念：对确定的对象做出判断的陈述句"></a>1）命题的概念：对确定的对象做出判断的陈述句</h4><ul>
+<li>判断正确：True </li>
+<li>否则：False </li>
+<li>True &amp; False是命题的属性，称为<strong>真值</strong> </li>
+<li>能否知道真值是不一定的，但一定<strong>非真即假</strong> </li>
+<li>悖论不能作为命题：”这句话是错的。” </li>
+</ul>
+<h4 id="2）命题的识别实例"><a href="#2）命题的识别实例" class="headerlink" title="2）命题的识别实例"></a>2）命题的识别实例</h4><table>
+<thead>
+<tr>
+<th>句子</th>
+<th>命题？</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>血是白的</td>
+<td>Y（True）</td>
+<td>确定的对象（血的颜色）+判断+陈述句</td>
+</tr>
+<tr>
+<td>2+2=5</td>
+<td>Y（False）</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>您贵姓？</td>
+<td>N</td>
+<td>不是陈述句</td>
+</tr>
+<tr>
+<td>X+y&lt;10</td>
+<td>N</td>
+<td>不是确定的对象，应将xy取得确定的值</td>
+</tr>
+</tbody></table>
+<h3 id="3-排中律（Law-of-Excluded-Middle"><a href="#3-排中律（Law-of-Excluded-Middle" class="headerlink" title="3. 排中律（Law of Excluded Middle)"></a>3. 排中律（Law of Excluded Middle)</h3><h4 id="1）定义"><a href="#1）定义" class="headerlink" title="1）定义"></a>1）定义</h4><ul>
+<li>任意事物在同一时间内，具有某种属性或者不具有某种属性，而无其他可能。 </li>
+</ul>
+<h4 id="2）反证法与排中律："><a href="#2）反证法与排中律：" class="headerlink" title="2）反证法与排中律："></a>2）反证法与排中律：</h4><ul>
+<li>否命题为False—→排中律—→命题True </li>
+</ul>
+<h4 id="3）直觉主义对于排中律的质疑"><a href="#3）直觉主义对于排中律的质疑" class="headerlink" title="3）直觉主义对于排中律的质疑"></a>3）直觉主义对于排中律的质疑</h4><ul>
+<li>从有穷中概括出来的排中律，不能贸然推广到无穷 </li>
+</ul>
+<h3 id="4-命题符号化"><a href="#4-命题符号化" class="headerlink" title="4.命题符号化"></a>4.命题符号化</h3><h4 id="1）原子命题-amp-复合命题"><a href="#1）原子命题-amp-复合命题" class="headerlink" title="1）原子命题 &amp; 复合命题"></a>1）原子命题 &amp; 复合命题</h4><p>举例：（2是偶数） AND （3是偶数） </p>
+<p>由举例推出3个新概念： </p>
+<ul>
+<li>逻辑联结词（logical connectives)：连接命题，并对真值进行运算的词。 </li>
+<li>原子命题(atom proposition)：不含有逻辑联结词的命题。 </li>
+<li>复合命题（compound proposition)：包含了原子命题和逻辑联结词的命题。 </li>
+</ul>
+<h4 id="2）如何把命题编程算式？"><a href="#2）如何把命题编程算式？" class="headerlink" title="2）如何把命题编程算式？"></a>2）如何把命题编程算式？</h4><ul>
+<li>形式化第一步：<strong>抽象</strong>(abstraction) <ul>
+<li>仅仅关注命题的本质属性：真值，而抛弃其丰富的内涵。 </li>
+<li>仅仅关注逻辑联结词的本质属性：对真值的运算，而抛弃多变的语言表达方式。 </li>
+</ul>
+</li>
+<li>将二者变为符号，以规则联结 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>自然语言</th>
+<th>形式符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>真假命题</td>
+<td>T/F</td>
+</tr>
+<tr>
+<td>原子命题</td>
+<td>p q r s</td>
+</tr>
+<tr>
+<td>逻辑联结词</td>
+<td></td>
+</tr>
+<tr>
+<td>真值</td>
+<td>true：1 / false：2</td>
+</tr>
+</tbody></table>
+<h4 id="3）符号的定义"><a href="#3）符号的定义" class="headerlink" title="3）符号的定义"></a>3）符号的定义</h4><ul>
+<li>符号体系对于数学乃至科学体系的发展至关重要。 </li>
+<li>简洁清晰的符号能使人的抽象思维效率飞跃 </li>
+<li>形式主义者认为：数学是符号变换的游戏，只不过一部分数学恰巧跟我们所在的这个物理世界相符合而已。（我觉得挺对的） </li>
+</ul>
+<h3 id="5-逻辑联结词"><a href="#5-逻辑联结词" class="headerlink" title="5. 逻辑联结词"></a>5. 逻辑联结词</h3><h4 id="1）否定词（negation-not-：﹁"><a href="#1）否定词（negation-not-：﹁" class="headerlink" title="1）否定词（negation) / (not)：﹁"></a>1）否定词（negation) / (not)：﹁</h4><ul>
+<li>﹁p的逻辑关系为：p不成立 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>原命题</th>
+<th>前提p：直角 结论q：相等</th>
+<th>直角相等</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>否定</td>
+<td>若 p 则﹁q</td>
+<td>直角不相等</td>
+</tr>
+<tr>
+<td>否命题</td>
+<td>若﹁p 则﹁q</td>
+<td>不全是直角的角不全相等</td>
+</tr>
+</tbody></table>
+<h4 id="2）合取词-conjunction-and-："><a href="#2）合取词-conjunction-and-：" class="headerlink" title="2）合取词 (conjunction) / (and)：^"></a>2）合取词 (conjunction) / (and)：^</h4><ul>
+<li>p^q的逻辑关系为：p和q同时成立 </li>
+<li>自然语言中很多表示并列的联结词都可以符号化为^ ： </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>既…又……</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>不但…而且…</td>
+</tr>
+<tr>
+<td>虽然…但是…</td>
+</tr>
+</tbody></table>
+<ul>
+<li>举例：P：张三聪明；q：张三用功 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>张三既聪明又用功</th>
+<th>P^q</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三不仅聪明，而且用功</td>
+<td>P^q</td>
+</tr>
+<tr>
+<td>张三虽然不聪明，但是用功</td>
+<td>﹁p^q</td>
+</tr>
+<tr>
+<td>张三很聪明，但是不用功</td>
+<td>P^﹁q</td>
+</tr>
+</tbody></table>
+<h4 id="3）-析取词-disjunction-or-：v"><a href="#3）-析取词-disjunction-or-：v" class="headerlink" title="3） 析取词(disjunction) / (or)：v"></a>3） 析取词(disjunction) / (or)：v</h4><ul>
+<li>自然语言中的“或”要注意其可能表示为相容或/排斥或抑或 </li>
+<li>举例： </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>原命题</th>
+<th>P</th>
+<th>q</th>
+<th>算式</th>
+<th>相容 / 排斥</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>李四学过德语或者法语</td>
+<td>学过德语</td>
+<td>学过法语</td>
+<td>p v q</td>
+<td>容</td>
+</tr>
+<tr>
+<td>张三生于73或72年</td>
+<td>生于73年</td>
+<td>生于72年</td>
+<td>p v q</td>
+<td>斥</td>
+</tr>
+<tr>
+<td>人固有一死，或泰山/鸿毛</td>
+<td>重于泰山</td>
+<td>轻于鸿毛</td>
+<td>p v q</td>
+<td>斥</td>
+</tr>
+</tbody></table>
+<ul>
+<li>如果需要精确表示排斥或：（ p^ ﹁q ）v (﹁p ^ q ) </li>
+</ul>
+<h4 id="4）-蕴涵词-implication-if…then…-：→"><a href="#4）-蕴涵词-implication-if…then…-：→" class="headerlink" title="4） 蕴涵词(implication)/ (if…then…)：→"></a>4） 蕴涵词(implication)/ (if…then…)：→</h4><ul>
+<li><h5 id="P→q中，p：蕴涵前件-q：蕴涵后件"><a href="#P→q中，p：蕴涵前件-q：蕴涵后件" class="headerlink" title="P→q中，p：蕴涵前件/ q：蕴涵后件"></a>P→q中，p：蕴涵前件/ q：蕴涵后件</h5></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>自然语言联结词</th>
+<th>暗示条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>只要…… 就……</td>
+<td>充分条件</td>
+</tr>
+<tr>
+<td>如果…… 那么……</td>
+<td>充分条件</td>
+</tr>
+<tr>
+<td>只有…… 才……</td>
+<td>必要条件</td>
+</tr>
+</tbody></table>
+<ul>
+<li>对于只有 q 才 p 而言，需要颠倒条件<ul>
+<li>举例：只有天黑了，夜猫子才出来活动。 </li>
+<li>P：夜猫子出来活动； q：天黑了 </li>
+</ul>
+</li>
+<li>自然语言中，条件语句一般都具有内在联系，而数理逻辑则不一定具有</li>
+<li>只有p真q假的 时候，p→q才为假<ul>
+<li>举例：如果天气好，我去接你。只有p真q假才算食言 </li>
+<li>和（﹁p v q ）真值表相同 </li>
+</ul>
+</li>
+</ul>
+<h4 id="5）双向蕴涵词（two-way-implication-if-and-only-if-：↔"><a href="#5）双向蕴涵词（two-way-implication-if-and-only-if-：↔" class="headerlink" title="5）双向蕴涵词（two-way implication) / (if and only if)：↔"></a>5）双向蕴涵词（two-way implication) / (if and only if)：↔</h4><ul>
+<li>P↔q的逻辑关系为：p&amp;q互为充要条件，在p/q真值相同的情况下，p↔q为真 </li>
+<li>表示两件事情同时发生或同时不发生 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>原命题</th>
+<th>p</th>
+<th>q</th>
+<th>算式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>圆12面积相等当且仅当它们半径相等</td>
+<td>圆12面积相等</td>
+<td>圆12半径相等</td>
+<td>P ↔q</td>
+</tr>
+<tr>
+<td>2+3=5当且仅当5是有理数</td>
+<td>2+3=5</td>
+<td>5是有理数</td>
+<td>P↔q</td>
+</tr>
+<tr>
+<td>除非网断了，否则他qq一定在线</td>
+<td>网断了</td>
+<td>他qq在线</td>
+<td>P↔﹁q</td>
+</tr>
+</tbody></table>
+<h2 id="二、命题公式"><a href="#二、命题公式" class="headerlink" title="二、命题公式"></a>二、命题公式</h2><h3 id="1-命题公式"><a href="#1-命题公式" class="headerlink" title="1.命题公式"></a>1.命题公式</h3><p>逻辑符号的组成的规则应当不是随意的，那么规则是什么呢？==（比如算数有+-x/，那么写成<strong>1+-5/3</strong>就是不对的）==</p>
+<h4 id="1）命题公式（proposition-formula-的组成部分"><a href="#1）命题公式（proposition-formula-的组成部分" class="headerlink" title="1）命题公式（proposition formula) 的组成部分"></a>1）命题公式（proposition formula) 的组成部分</h4><ul>
+<li>命题常元（proposition constants)：具体命题 / 常命题的pqrs &amp; tf </li>
+<li>命题变元（proposition variables)：以{1，0}为取值范围的变量，仍用pqrs </li>
+<li>命题公式（proposition formula)：由常元 / 变元和联结词组成的形式更复杂的公式 </li>
+</ul>
+<h4 id="2）命题公式的定义"><a href="#2）命题公式的定义" class="headerlink" title="2）命题公式的定义"></a>2）命题公式的定义</h4><ul>
+<li>命题常元 &amp; 命题变元是命题公式，特别地称之为<strong>原子公式</strong>或<strong>原子</strong> </li>
+<li>如果A，B是命题公式，那么五个联结词联结的命题也是命题公式 </li>
+<li>只有有限步引用上述两条所组成的符号串是命题公式 </li>
+</ul>
+<h4 id="3）逻辑联结词优先级"><a href="#3）逻辑联结词优先级" class="headerlink" title="3）逻辑联结词优先级"></a>3）逻辑联结词优先级</h4><ul>
+<li>如果没有优先级，那么括号太多 </li>
+<li>定义优先级：﹁，（∨∧），→, ↔ </li>
+<li>从左到右顺序 </li>
+</ul>
+<h3 id="2-真值函数"><a href="#2-真值函数" class="headerlink" title="2.真值函数"></a>2.真值函数</h3><p>命题公式的内容的意义在哪？ </p>
+<h4 id="1）命题公式与真值函数（truth-function"><a href="#1）命题公式与真值函数（truth-function" class="headerlink" title="1）命题公式与真值函数（truth function)"></a>1）命题公式与真值函数（truth function)</h4><ul>
+<li><h5 id="赋值（assignments-："><a href="#赋值（assignments-：" class="headerlink" title="赋值（assignments)："></a>赋值（assignments)：</h5><ul>
+<li>对任意给定的p1，p2.……pn的取值状况的组合 </li>
+<li>赋值用希腊字母alpha/beta表示 </li>
+<li>对于每一个赋值，公式A均有一个确定的真值 </li>
+<li>赋值使得公式A的意义在于对应了一个真值函数 </li>
+</ul>
+</li>
+<li><h5 id="真值表"><a href="#真值表" class="headerlink" title="真值表"></a>真值表</h5><ul>
+<li>对于所有可能的赋值，公式A的真值可用真值表来确定 </li>
+</ul>
+</li>
+<li><h5 id="成真赋值-amp-成假赋值"><a href="#成真赋值-amp-成假赋值" class="headerlink" title="成真赋值 &amp; 成假赋值"></a>成真赋值 &amp; 成假赋值</h5><ul>
+<li>当赋值α使得公式A的值为真值时，称α弄真A，记作α（A）=1 </li>
+<li>反之，则α弄假A，记作α（A）=0 </li>
+</ul>
+</li>
+</ul>
+<h3 id="3-命题形式化"><a href="#3-命题形式化" class="headerlink" title="3.命题形式化"></a>3.命题形式化</h3><h4 id="1）自然语言的形式化"><a href="#1）自然语言的形式化" class="headerlink" title="1）自然语言的形式化"></a>1）自然语言的形式化</h4><ul>
+<li>自然语言表述的命题，经过抽象，可以形式化为命题公式 <ul>
+<li>确定原子命题 → 确定联结词 → 处理命题之间的联结关系及顺序 </li>
+</ul>
+</li>
+</ul>
+<h4 id="2）注意事项"><a href="#2）注意事项" class="headerlink" title="2）注意事项"></a>2）注意事项</h4><ul>
+<li>要善于确定原子命题</li>
+<li>要善于识别自然语言中的连接词</li>
+<li>涉及多个对象进行否定的否定词位置要准确</li>
+<li>不可省略必要的括号</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhonghuo.github.io/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" data-id="ckdswfxv6000160vm0y296etj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-集合论" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/13/%E9%9B%86%E5%90%88%E8%AE%BA/" class="article-date">
+  <time datetime="2020-08-13T14:28:53.824Z" itemprop="datePublished">2020-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、集合论基本概念"><a href="#一、集合论基本概念" class="headerlink" title="一、集合论基本概念"></a>一、集合论基本概念</h2><h3 id="1-集合论-amp-无限"><a href="#1-集合论-amp-无限" class="headerlink" title="1.集合论 &amp; 无限"></a>1.集合论 &amp; 无限</h3><h4 id="1）集合论概念"><a href="#1）集合论概念" class="headerlink" title="1）集合论概念"></a>1）集合论概念</h4><ul>
+<li><h5 id="集合论概念"><a href="#集合论概念" class="headerlink" title="集合论概念"></a>集合论概念</h5><ul>
+<li>集合论是以集合概念为基础，研究集合的一般性质的数学分支学科</li>
+<li>集合试图定义<strong>数 &amp; 数的运算</strong>，进而发展了整个数学</li>
+</ul>
+</li>
+<li><h5 id="集合概念"><a href="#集合概念" class="headerlink" title="集合概念"></a>集合概念</h5><ul>
+<li>集合是简单的而又<strong>不做定义</strong>的初始概念</li>
+<li>一般来说，是一些确定的、相异的事物的总体</li>
+</ul>
+</li>
+<li><h5 id="集合分类"><a href="#集合分类" class="headerlink" title="集合分类"></a>集合分类</h5><ul>
+<li><p>按照集合中的事物的数目是否有限，可分为：有限集合、<strong>无限集合</strong></p>
+</li>
+<li><p>无限集合是<strong>集合论研究的主要对象</strong>，也是集合论建立的难点 &amp; 关键点</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）集合论-amp-无限"><a href="#2）集合论-amp-无限" class="headerlink" title="2）集合论 &amp;无限"></a>2）集合论 &amp;无限</h4><ul>
+<li><h5 id="集合论的历史"><a href="#集合论的历史" class="headerlink" title="集合论的历史"></a>集合论的历史</h5><ul>
+<li>创始人：康托尔</li>
+<li>诞生日：1873年12月7日</li>
+<li>事件：给戴德金的信中最早提出集合论思想</li>
+</ul>
+</li>
+<li><h5 id="无限的历史"><a href="#无限的历史" class="headerlink" title="无限的历史"></a>无限的历史</h5><ul>
+<li>集合论的全部历史，都是围绕无限概念展开的</li>
+<li>对于无限的研究可以追溯到2000年前的芝诺悖论</li>
+</ul>
+</li>
+</ul>
+<h4 id="3）芝诺悖论"><a href="#3）芝诺悖论" class="headerlink" title="3）芝诺悖论"></a>3）芝诺悖论</h4><ul>
+<li><h5 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h5><ul>
+<li>二分法悖论<ul>
+<li>一个物体从A地出发，永远不能到达B地</li>
+</ul>
+</li>
+<li>阿基里斯 &amp; 乌龟<br>  * </li>
+<li>飞矢不动<ul>
+<li>2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h5><ul>
+<li>探讨涉及到时间空间的连续性问题，以及无限集合</li>
+</ul>
+</li>
+<li><h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><ul>
+<li>几何学中设置了“<strong>整体&gt;部分</strong>”的公理，排除无限概念</li>
+</ul>
+</li>
+</ul>
+<h4 id="5）两种无限：进程-amp-整体"><a href="#5）两种无限：进程-amp-整体" class="headerlink" title="5）两种无限：进程 &amp; 整体"></a>5）两种无限：进程 &amp; 整体</h4><ul>
+<li><h5 id="两种无限"><a href="#两种无限" class="headerlink" title="两种无限"></a>两种无限</h5><ul>
+<li>潜无限<ul>
+<li>作为过程的无限，指永远延伸，永远也完成不了的进程</li>
+<li>例如：自然数数列：1, 2, 3, …., n</li>
+</ul>
+</li>
+<li>实无限<ul>
+<li>作为已完成了整体的无限</li>
+<li>如果自然数全体组成的整体 {1, 2, 3, …., n}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="亚里士多德的看法"><a href="#亚里士多德的看法" class="headerlink" title="亚里士多德的看法"></a>亚里士多德的看法</h5><ul>
+<li>最先提出要求，区分这两个无限</li>
+<li>并认为只存在潜无限时，实无限（即无限集合）是不存在的，因为<strong>无限多的事物不能构成一个固定的整体</strong></li>
+<li><strong>既然无限集合总处在变动之中，就无法讨论它的固有的性质了</strong></li>
+<li>由于无限集合不符合常识和经验，2000多年来数学家对无限集合持否定态度</li>
+<li>否定归否定，但在研究过程中还是发现了无限集合的一些性质</li>
+</ul>
+</li>
+</ul>
+<h4 id="6）无限集合的性质"><a href="#6）无限集合的性质" class="headerlink" title="6）无限集合的性质"></a>6）无限集合的性质</h4><ul>
+<li><h5 id="分圆问题"><a href="#分圆问题" class="headerlink" title="分圆问题"></a>分圆问题</h5><ul>
+<li>直径数量和将圆分成部分的数量有一一对应的关系</li>
+<li>表明直径的数量集{1, 2, 3, …., n}，圆被分成部分的数量集{2, 4, 6, …., 2n}</li>
+</ul>
+</li>
+<li><h5 id="同心圆对应点问题"><a href="#同心圆对应点问题" class="headerlink" title="同心圆对应点问题"></a>同心圆对应点问题</h5><ul>
+<li>两个大小不同的同心圆上面的点，可以通过公共半径来一一对应</li>
+</ul>
+</li>
+<li><h5 id="不等长线段对应点问题"><a href="#不等长线段对应点问题" class="headerlink" title="不等长线段对应点问题"></a>不等长线段对应点问题</h5><ul>
+<li><p>两不等长线段上的点，可以构成一一对应</p>
+<img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200812165708427.png" alt="image-20200812165708427" style="zoom: 50%;" />
+
+<div align='center'>在我们的意识中，“整体大于部分”，长的线段总是比短的线段点多
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="7）一一对应关系"><a href="#7）一一对应关系" class="headerlink" title="7）一一对应关系"></a>7）一一对应关系</h4><ul>
+<li><p>一一对应关系称作<strong>等价关系</strong></p>
+</li>
+<li><p>捷克数学家波尔察诺最先明确并承认无限集合的概念</p>
+</li>
+<li><p>实数集[0, 5] &amp; [0, 12]之间的点可以建立一一对应关系：</p>
+  <div align='center'>y=(12/5)x
+
+</li>
+</ul>
+<h4 id="8）康托尔对无限集合的贡献"><a href="#8）康托尔对无限集合的贡献" class="headerlink" title="8）康托尔对无限集合的贡献"></a>8）康托尔对无限集合的贡献</h4><ul>
+<li>定义无限集合</li>
+<li>区分两种不同的无限集合<ul>
+<li>可数集<ul>
+<li>和自然数构成一一对应关系的可数集</li>
+</ul>
+</li>
+<li>具有<strong>连续统</strong>的势的集合<ul>
+<li>和实数区间构成一一对应的具有连续统的势的集</li>
+</ul>
+</li>
+<li>可数集的无穷 <strong>&lt;&lt; ** 具有</strong>连续统**的势的集合</li>
+</ul>
+</li>
+<li>证明了一条直线上的点和整个n为空间中的点具有一一对应的关系</li>
+<li>引入了基数、序数、超限基数、超限序数的概念，并规定了他们的运算</li>
+<li>结合论需要严格运用纯理性的论证，其结论不是人的直观和常识所能掌握的</li>
+<li>康托尔的<strong>朴素集合论</strong>成为整个数学的基础</li>
+</ul>
+<h4 id="9）公理化集合"><a href="#9）公理化集合" class="headerlink" title="9）公理化集合"></a>9）公理化集合</h4><ul>
+<li><h5 id="产生"><a href="#产生" class="headerlink" title="产生"></a>产生</h5><ul>
+<li>罗素悖论的发现，产生了第3次数学危机</li>
+<li>为了在朴素集合论中消除悖论，采用许多办法来限制“病态集合”的产生</li>
+<li>最成功的是采用<strong>希尔伯特公理化思想</strong>，对朴素集合论进行公理化</li>
+</ul>
+</li>
+<li><h5 id="希尔伯特公理化思想"><a href="#希尔伯特公理化思想" class="headerlink" title="希尔伯特公理化思想"></a>希尔伯特公理化思想</h5><ul>
+<li>将集合作为不做定义的基本概念，，通过一系列公理描述集合的性质，并避免产生悖论</li>
+</ul>
+</li>
+<li><h5 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h5><ul>
+<li>公理集合论发展之后，普遍认为他给数学提供了一个可靠的基础</li>
+</ul>
+</li>
+</ul>
+<h4 id="8）希尔伯特旅馆的故事"><a href="#8）希尔伯特旅馆的故事" class="headerlink" title="8）希尔伯特旅馆的故事"></a>8）希尔伯特旅馆的故事</h4><h3 id="2-集合基本概念"><a href="#2-集合基本概念" class="headerlink" title="2.集合基本概念"></a>2.集合基本概念</h3><h4 id="1）什么是集合？"><a href="#1）什么是集合？" class="headerlink" title="1）什么是集合？"></a>1）什么是集合？</h4><ul>
+<li><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><ul>
+<li>是作为整体识别的，确定的互相区别的，一些对象的总体</li>
+</ul>
+</li>
+<li><h5 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h5><ul>
+<li>整体识别：不再分割</li>
+<li>确定：属于或不属于整体</li>
+<li>互相区别：各异的对象</li>
+</ul>
+</li>
+<li><h5 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h5><ul>
+<li>北京大学的全体学生：组成对象是学生</li>
+<li>全体自然数：组成对象是各个自然数</li>
+<li>方程x^2^-2x+1=0的根：组成对象是1（不是两个1）</li>
+</ul>
+</li>
+</ul>
+<h4 id="2）集合的基本术语"><a href="#2）集合的基本术语" class="headerlink" title="2）集合的基本术语"></a>2）集合的基本术语</h4><ul>
+<li><h5 id="成员-元素"><a href="#成员-元素" class="headerlink" title="成员/元素"></a>成员/元素</h5><ul>
+<li>元素可以使任何具体或抽象的事物</li>
+<li>元素也可以是集合</li>
+</ul>
+</li>
+<li><h5 id="记号"><a href="#记号" class="headerlink" title="记号{}"></a>记号{}</h5><ul>
+<li>A={1,2,3}</li>
+</ul>
+</li>
+<li><h5 id="元素和集合的隶属关系∈"><a href="#元素和集合的隶属关系∈" class="headerlink" title="元素和集合的隶属关系∈"></a>元素和集合的隶属关系∈</h5><ul>
+<li>当对象a是集合A的成员，称a<strong>属于</strong>A，记作<kbd>a∈A</kbd></li>
+<li>当不属于时，称a<strong>不属于</strong>A，记作<kbd>a∉A</kbd></li>
+</ul>
+</li>
+<li><h5 id="空集∅"><a href="#空集∅" class="headerlink" title="空集∅"></a>空集∅</h5><ul>
+<li><p>没有任何元素的特定集合</p>
+</li>
+<li><p>谓词公式写成矛盾式即可创造一个空集</p>
+  <div align='center'>∅ = {} = {x|x≠x}
+</li>
+</ul>
+</li>
+<li><h5 id="有限集"><a href="#有限集" class="headerlink" title="有限集"></a>有限集</h5><ul>
+<li>∅ 和只含有有限个元素的集合</li>
+</ul>
+</li>
+<li><h5 id="基数（cardinality）-A"><a href="#基数（cardinality）-A" class="headerlink" title="基数（cardinality）|A|"></a>基数（cardinality）|A|</h5><ul>
+<li>有限集合中<strong>成员的个数</strong>，称作集合的基数</li>
+<li>无限集合的基数定义更复杂</li>
+<li>集合A的基数记作<kbd>|A|</kbd></li>
+</ul>
+</li>
+</ul>
+<h4 id="3）规定集合的3种方式-amp-举例"><a href="#3）规定集合的3种方式-amp-举例" class="headerlink" title="3）规定集合的3种方式 &amp; 举例"></a>3）规定集合的3种方式 &amp; 举例</h4><ul>
+<li><h5 id="列举法"><a href="#列举法" class="headerlink" title="列举法"></a>列举法</h5><ul>
+<li>将所有元素列举</li>
+</ul>
+</li>
+<li><h5 id="描述法"><a href="#描述法" class="headerlink" title="描述法"></a>描述法</h5><ul>
+<li><p>将集合中元素的特征，用谓词公式表述</p>
+  <div align='center'>A={x|P(x)}
+</li>
+</ul>
+</li>
+<li><h5 id="归纳法"><a href="#归纳法" class="headerlink" title="归纳法"></a>归纳法</h5></li>
+</ul>
+<h4 id="4）集合论三大基本原理"><a href="#4）集合论三大基本原理" class="headerlink" title="4）集合论三大基本原理"></a>4）集合论三大基本原理</h4><p>用于阐述集合是一个什么样的概念，集合的性质是什么</p>
+<ul>
+<li><h5 id="外延公理（Extensionality-Axiom）"><a href="#外延公理（Extensionality-Axiom）" class="headerlink" title="外延公理（Extensionality Axiom）"></a>外延公理（Extensionality Axiom）</h5><ul>
+<li><p>两个集合a和b相等，当且仅当它们具有相同的元素</p>
+<div align='center'>A=B ↔ ∀x(x∈A↔x∈B)
+</li>
+<li><p>说明了集合的无序性，以及集合表示形式的不唯一性</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h5 id="概括公理（Comprehension-Axiom）"><a href="#概括公理（Comprehension-Axiom）" class="headerlink" title="概括公理（Comprehension Axiom）"></a>概括公理（Comprehension Axiom）</h5><ul>
+<li><p>对于任意一个个体域U，任一谓词公式P都确定一个以该域中的对象为元素的集合S</p>
+<div align='center'>S={x|x∈U∧P(x)}
+</li>
+<li><p>规定了集合成员的确定性，因为谓词公式有真值，非真即假</p>
+</li>
+<li><p>可定义空集：P为永假式</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h5 id="正规公理（Regularity-Axiom）"><a href="#正规公理（Regularity-Axiom）" class="headerlink" title="正规公理（Regularity Axiom）"></a>正规公理（Regularity Axiom）</h5><ul>
+<li>不存在集合A1，A2，A3…使得：…∈A3∈A2∈A1</li>
+<li>说明了集合的有限可分，个体域的元素是基本粒子</li>
+<li>确立了元素和集合的不同层次性，集合不能是自己的成员，排除了<code>A=&#123;A&#125;</code>这样的病态集合</li>
+</ul>
+</li>
+</ul>
+<h4 id="5）引发罗素悖论的抽象原理-没懂"><a href="#5）引发罗素悖论的抽象原理-没懂" class="headerlink" title="5）引发罗素悖论的抽象原理==没懂=="></a>5）引发罗素悖论的抽象原理==没懂==</h4><ul>
+<li>定义谓词：Q(x) = x∉x ==元素属于元素==</li>
+<li>定义集合：B = {x|Q(x)}</li>
+</ul>
+<h3 id="3-子集合"><a href="#3-子集合" class="headerlink" title="3.子集合"></a>3.子集合</h3><h4 id="1）子集合定义-amp-举例"><a href="#1）子集合定义-amp-举例" class="headerlink" title="1）子集合定义 &amp; 举例"></a>1）子集合定义 &amp; 举例</h4><h4 id="2）子集合的性质"><a href="#2）子集合的性质" class="headerlink" title="2）子集合的性质"></a>2）子集合的性质</h4><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>定理表述</th>
+<th>自取名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>对于任意集合A/B，A=B ⟺ (A⊆B)∧(B⊆A)</td>
+<td>相等律</td>
+</tr>
+<tr>
+<td>2</td>
+<td>设A/B/C为任意集合，(A⊆B)∧(B⊆C) ⇒ A ⊆ C</td>
+<td>包涵传递</td>
+</tr>
+<tr>
+<td>3</td>
+<td>对于任意集合A，A ⊆ U</td>
+<td>全集式</td>
+</tr>
+<tr>
+<td>4</td>
+<td>对于任何集合A，∅ ⊆ A</td>
+<td>空集式</td>
+</tr>
+<tr>
+<td>5</td>
+<td>空集是唯一的</td>
+<td>空集唯一</td>
+</tr>
+<tr>
+<td>6</td>
+<td>设A为一有限集合，|A|=n，那么A的子集个数为2^n^</td>
+<td>子集数目律</td>
+</tr>
+</tbody></table>
+<h4 id="3）真子集"><a href="#3）真子集" class="headerlink" title="3）真子集"></a>3）真子集</h4><ul>
+<li>(A ⊆ B)∧(A ≠ B)⇒A ⊂ B</li>
+<li>空集∅是所有非空集合的真子集</li>
+</ul>
+<h3 id="4-集合基本运算"><a href="#4-集合基本运算" class="headerlink" title="4.集合基本运算"></a>4.集合基本运算</h3><h4 id="1）-集合基本运算"><a href="#1）-集合基本运算" class="headerlink" title="1） 集合基本运算"></a>1） 集合基本运算</h4><ul>
+<li><h5 id="集合运算定义"><a href="#集合运算定义" class="headerlink" title="集合运算定义"></a>集合运算定义</h5><ul>
+<li>指以及和作为运算对象结果还是集合的运算</li>
+</ul>
+</li>
+<li><h5 id="基本的集合运算"><a href="#基本的集合运算" class="headerlink" title="基本的集合运算"></a>基本的集合运算</h5><ul>
+<li><p>并(Union)</p>
+  <div align='center'>A ∪ B
+</li>
+<li><p>交(Intersection)</p>
+  <div align='center'>A ∩ B
+</li>
+<li><p>差(Difference)</p>
+  <div align='center'>A - B
+</li>
+<li><p>补(Complement)</p>
+  <div align='center'>A~ = U-A
+</li>
+</ul>
+</li>
+<li><h5 id="交-amp-并的运算性质"><a href="#交-amp-并的运算性质" class="headerlink" title="交 &amp; 并的运算性质"></a>交 &amp; 并的运算性质</h5><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一律</td>
+<td>A∩A=A</td>
+</tr>
+<tr>
+<td>交换律</td>
+<td>A∩B=B∩A</td>
+</tr>
+<tr>
+<td>结合律</td>
+<td>A∩(B∩C) = (A∩B)∩C</td>
+</tr>
+<tr>
+<td>分配律</td>
+<td>A∪(B∩C) = (A∪B)∩(A∪C)</td>
+</tr>
+<tr>
+<td></td>
+<td>A∪∅ = A，A∪U = U；A∩∅ = ∅，A∩U =A</td>
+</tr>
+</tbody></table>
+</li>
+<li></li>
+</ul>
+<h3 id="5-集合族及运算"><a href="#5-集合族及运算" class="headerlink" title="5.集合族及运算"></a>5.集合族及运算</h3><h2 id="二、归纳定义"><a href="#二、归纳定义" class="headerlink" title="二、归纳定义"></a>二、归纳定义</h2><h3 id="1-归纳定义"><a href="#1-归纳定义" class="headerlink" title="1.归纳定义"></a>1.归纳定义</h3><h3 id="2-自然数的定义"><a href="#2-自然数的定义" class="headerlink" title="2.自然数的定义"></a>2.自然数的定义</h3><h3 id="3-归纳原理"><a href="#3-归纳原理" class="headerlink" title="3.归纳原理"></a>3.归纳原理</h3><h3 id="4-数学归纳法"><a href="#4-数学归纳法" class="headerlink" title="4.数学归纳法"></a>4.数学归纳法</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhonghuo.github.io/2020/08/13/%E9%9B%86%E5%90%88%E8%AE%BA/" data-id="ckdswfxv8000260vm6cu2ahsa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Hexo &amp; GitHub创建自己的Blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/13/Hexo%20&%20GitHub%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Blog/" class="article-date">
+  <time datetime="2020-08-13T14:28:53.817Z" itemprop="datePublished">2020-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo-amp-GitHub创建自己的Blog"><a href="#Hexo-amp-GitHub创建自己的Blog" class="headerlink" title="Hexo &amp; GitHub创建自己的Blog"></a>Hexo &amp; GitHub创建自己的Blog</h1><h2 id="下载Nodejs"><a href="#下载Nodejs" class="headerlink" title="下载Nodejs"></a>下载Nodejs</h2><h2 id="下载Git-for-Win"><a href="#下载Git-for-Win" class="headerlink" title="下载Git for Win"></a>下载Git for Win</h2><ul>
+<li><p>打开Git</p>
+</li>
+<li><p>关联Git账号与Git bash，输入</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config -<span class="literal">-global</span> user.name <span class="string">&quot;zhonghue&quot;</span></span><br><span class="line">git config -<span class="literal">-global</span> user.email “<span class="number">3047917554</span>@qq.com<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Git-ssh配置"><a href="#Git-ssh配置" class="headerlink" title="Git ssh配置"></a>Git ssh配置</h2><ul>
+<li>打开GitHub，输入账号<code>3047917554@qq.com</code>，密码<code>Luosen123</code></li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813205328874.png" alt="image-20200813205328874"></p>
+<ul>
+<li>创建新仓库<code>zhonghue.github.io</code></li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813205717704.png" alt="image-20200813205717704"></p>
+<ul>
+<li><p>右键打开Gitbash，输入后连摁三下<kbd>Enter</kbd></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;3047917554@qq.com&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在Everything中输入<code>ssh</code>，点开该文件夹位置</p>
+</li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813210634913.png" alt="image-20200813210634913"></p>
+<ul>
+<li><code>.pub</code>文件用sublime打开，复制字符串密钥</li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813210828869.png" alt="image-20200813210828869"></p>
+<ul>
+<li>回到GitHub，按顺序点击<code>右上角头像——setting——SSH keys</code></li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813211223250.png" alt="image-20200813211223250"></p>
+<h2 id="Hexo下载和配置"><a href="#Hexo下载和配置" class="headerlink" title="Hexo下载和配置"></a>Hexo下载和配置</h2><ul>
+<li><p>在<code>D:\Driver</code>创建文件夹<code>blog</code>，用于日后发布文章</p>
+</li>
+<li><p>打开powershell ，cd命令该进入文件夹，安装hexo。输入：</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成后初始化博客</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init Pittblog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装依赖包</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cd命令进入Pittblog。本地试运行，输入：</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> pittblog</span><br><span class="line">hexo s <span class="literal">-p</span> <span class="number">5555</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>并在浏览器中输入<code>https：\\localhost:5555</code>，效果如下：</p>
+</li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813211824553.png" alt="image-20200813211824553"></p>
+<ul>
+<li><p>输入：</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer</span><span class="literal">-git</span> -<span class="literal">-save</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="下载Sublime-text3"><a href="#下载Sublime-text3" class="headerlink" title="下载Sublime text3"></a>下载Sublime text3</h2><ul>
+<li>拖拽pittblog进入sublime，点击<code>config.yml</code></li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813212143654.png" alt="image-20200813212143654"></p>
+<ul>
+<li>author修改为：Pitt Law</li>
+<li>url修改为：<code>https://zhonghuo.github.io</code></li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813212604276.png" alt="image-20200813212604276"></p>
+<ul>
+<li>deploy修改如下，<code>ctrl + s</code>保存：</li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813221959783.png" alt="image-20200813221959783"></p>
+<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ul>
+<li><p>在pittblog中使用powershell或gitbash，输入：</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g <span class="comment">#是genetor的意思</span></span><br><span class="line">hexo d <span class="comment">#是deploy的意思</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在浏览器中输入网址，登录成功！</p>
+</li>
+</ul>
+<p><img src="C:\Users\Pitt\AppData\Roaming\Typora\typora-user-images\image-20200813221637212.png" alt="image-20200813221637212"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhonghuo.github.io/2020/08/13/Hexo%20&%20GitHub%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Blog/" data-id="ckdswfxv0000060vm1w4xg8cg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -103,7 +3038,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/13/hello-world/" data-id="ckdstuie50000iovmdhtf3xe3" class="article-share-link">Share</a>
+      <a data-url="https://zhonghuo.github.io/2020/08/13/hello-world/" data-id="ckdstuie50000iovmdhtf3xe3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -129,9 +3064,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
     </div>
   </div>
 
@@ -139,12 +3074,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2020/08/13/hello-world/">Hello World</a>
+            <a href="/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E8%B0%93%E8%AF%8D%E9%80%BB%E8%BE%91%E5%8F%8A%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91%E5%8F%8A%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/13/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/13/%E9%9B%86%E5%90%88%E8%AE%BA/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/13/Hexo%20&%20GitHub%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Blog/">(no title)</a>
           </li>
         
       </ul>
@@ -159,7 +3110,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
+      &copy; 2020 Pitt Law<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
